@@ -27,12 +27,12 @@ const Create = (props) => {
                     <div>
                         <h2>title</h2>
                         <input type="text" placeholder="タイトル" onChange={(e) => setData("title", e.target.value)} />
-<span className="text-red-600">{props.errors.title}</span>
+                        <span className="text-red-600">{props.errors.title}</span>
                     </div>
                     <div>
                         <h2>Body</h2>
                         <textarea placeholder="ここに書け" onChange={(e) => setData("body", e.target.value)}></textarea>
-                        
+                        <span className="text-red-600">{props.errors.body}</span>
                     </div>
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
                 </form>
