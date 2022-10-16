@@ -11,6 +11,7 @@ export default function Authenticated({ auth, header, children }) {
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
+            <div className="py-5 text-8xl text-center">VALO BOARD</div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -21,8 +22,32 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
+                                <NavLink href="/" active={route().current('dashboard')}>
+                                    トップ
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/" active={route().current('dashboard')}>
+                                    ログイン
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/" active={route().current('dashboard')}>
+                                    マイページ
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/" active={route().current('dashboard')}>
+                                    新規登録
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/" active={route().current('dashboard')}>
+                                    検索
                                 </NavLink>
                             </div>
                         </div>
@@ -117,7 +142,19 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main className="flex max-w-full justify-around">
+                <div className="">
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                    <p>こんばんは</p>
+                </div>
+
+                <div className="w-2/3">{children}</div>
+            </main>
         </div>
     );
 }

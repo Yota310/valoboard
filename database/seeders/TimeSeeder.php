@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostSeeder extends Seeder
+class TimeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,19 +15,17 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->insert([
-            'title' => 'こんちは',
-            'body' => '今晩',
-            'category_id' => null,
+        DB::table('times')->insert([
+            'day'=>'日',
+            'time'=>'朝',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
-        DB::table('posts')->insert([
-            'title' => 'こんちはaaaaaa',
-            'body' => '今晩haaaaaaa',
-            'category_id' => null,
+        DB::table('times')->insert([
+            'day'=>'日',
+            'time'=>'昼',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 

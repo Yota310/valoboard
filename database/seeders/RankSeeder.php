@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PostSeeder extends Seeder
+class RankSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,22 +15,23 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('posts')->insert([
-            'title' => 'こんちは',
-            'body' => '今晩',
-            'category_id' => null,
+        DB::table('ranks')->insert([
+            'name'=>'アイアン',
+            'number' =>1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
-        DB::table('posts')->insert([
-            'title' => 'こんちはaaaaaa',
-            'body' => '今晩haaaaaaa',
-            'category_id' => null,
+
+        DB::table('ranks')->insert([
+            'name'=>'アイアン',
+            'number' =>2,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
+
+        
     }
 }
