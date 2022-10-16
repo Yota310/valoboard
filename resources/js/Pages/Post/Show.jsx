@@ -7,28 +7,35 @@ const Show = (props) => {
     const { post } = props;
 
     return (
-        <Authenticated auth={props.auth} header={
-            <h2 className="front-semibold text-xl text-gray-800 leading-tight">
-                Index
+        <div>
+            <Authenticated auth={props.auth} header={
+                <h2 className="front-semibold text-xl text-gray-800 leading-tight">
+                    Show
     </h2>
-        }>
+            }>
 
-            <div className="p-12">
-                <h1>{post.title}</h1>
-                <div>
-                    <h3>本文</h3>
-                    <p>{post.body}</p>
-                </div>
-                <div>
-                    <Link href="/">back</Link>
-                </div>
-            </div>
+                <div className="py-2 px-12">
+                    <h1>{post.title}</h1>
+                    <div>
+                        <h3>本文neko</h3>
+                        <p>{post.body}</p>
+                    </div>
 
-            <div>
-                [<Link href={"/posts/" + post.id + "/edit"}>edit</Link>]
+<div>
+    <p>{post.category.name}</p>
 </div>
 
-        </Authenticated>
+                    <div>
+                        <Link href="/">back</Link>
+                    </div>
+                </div>
+
+                <div className="px-12">
+                    [<Link href={"/posts/" + post.id + "/edit"}>edit</Link>]
+</div>
+
+            </Authenticated>
+        </div>
     );
 }
 
