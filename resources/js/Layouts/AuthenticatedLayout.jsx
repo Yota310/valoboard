@@ -10,9 +10,9 @@ export default function Authenticated({ auth, header, children }) {
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <nav className="bg-white border-b border-gray-100">
-            <div className="py-5 text-8xl text-center">VALO BOARD</div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav className="bg-black border-b border-gray-100 p-5">
+            <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white">VALO BOARD</div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black pt-2">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
@@ -20,7 +20,7 @@ export default function Authenticated({ auth, header, children }) {
                                     <ApplicationLogo className="block h-9 w-auto text-gray-500" />
                                 </Link>
                             </div>
-
+                        
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/" active={route().current('dashboard')}>
                                     トップ
@@ -28,7 +28,7 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/" active={route().current('dashboard')}>
+                                <NavLink href="/login" active={route().current('dashboard')}>
                                     ログイン
                                 </NavLink>
                             </div>
@@ -50,7 +50,9 @@ export default function Authenticated({ auth, header, children }) {
                                     検索
                                 </NavLink>
                             </div>
-                        </div>
+                        
+
+</div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className="ml-3 relative">
@@ -61,7 +63,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {auth.user.name}
+                                                ユーザー名:{auth.user.name}
 
                                                 <svg
                                                     className="ml-2 -mr-0.5 h-4 w-4"
@@ -136,24 +138,24 @@ export default function Authenticated({ auth, header, children }) {
                 </div>
             </nav>
 
-            {header && (
+            {/* {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
                 </header>
-            )}
+            )} */}
 
             <main className="flex max-w-full justify-around">
-                <div className="">
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
-                    <p>こんばんは</p>
+                <div className="w-1/6 bg-black text-white">
+                    <p className="pt-6 pb-1 px-6">初心者🔰</p>
+                    <p className="px-6 py-1">アンレ✨４以上</p>
+                    <p className="px-6 py-1">コンペ✨４以上</p>
+                    <p className="px-6 py-1">アンレ✨２以下</p>
+                    <p className="px-6 py-1">コンペ✨２以下</p>
+                    <p className="px-6 py-1">こんばんは</p>
+                    <p className="px-6 py-1">こんばんは</p>
                 </div>
 
-                <div className="w-2/3">{children}</div>
+                <div className="w-5/6">{children}</div>
             </main>
         </div>
     );

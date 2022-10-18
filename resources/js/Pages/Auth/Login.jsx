@@ -36,31 +36,32 @@ export default function Login({ status, canResetPassword }) {
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
+            <form className="text-center mt-10" onSubmit={submit}>
                 <div>
-                    <InputLabel forInput="email" value="Email" />
+                    <InputLabel forInput="email" value="メールアドレス" />
 
                     <TextInput
                         type="text"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-2/5 mx-auto"
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
+
                     />
 
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
                 <div className="mt-4">
-                    <InputLabel forInput="password" value="Password" />
+                    <InputLabel forInput="password" value="パスワード" />
 
                     <TextInput
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-2/5 mx-auto"
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />
@@ -69,27 +70,39 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="block mt-4">
-                    <label className="flex items-center">
+                    <label>
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
+                        <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶しますか？</span>
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
+                <div className="flex justify-center">
+                    <div className="flex items-center mt-4">
+                       
 
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Log in
+                        <PrimaryButton className="ml-4 text-xl hover:text-red-500" processing={processing}>
+                            ログイン
                     </PrimaryButton>
+
+                    
+
+                    </div>
                 </div>
+
+                <div className="mt-10">
+
+                {canResetPassword && (
+                            
+                            
+                            <Link
+                                href={route('password.request')}
+                                className="underline text-sm text-gray-600 hover:text-red-500"
+                            >
+                                パスワードをお忘れですか？？
+                            </Link>
+                        )}
+</div>
             </form>
         </GuestLayout>
     );

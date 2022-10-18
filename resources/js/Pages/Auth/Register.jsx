@@ -75,7 +75,7 @@ export default function Register() {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block"
                         autoComplete="new-password"
                         handleChange={onHandleChange}
                         required

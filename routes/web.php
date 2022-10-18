@@ -25,12 +25,8 @@ use App\Http\Controllers\HomeController;
 //     ]);
 // });
 
-Route::group(
-    ['middleware' => ['auth']],
-    function () {
+
         Route::get("/",[HomeController::class,"index"]);
-    }
-);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
