@@ -31,5 +31,13 @@ class StanceSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]); 
+
+        DB::table('stances')->insert([
+            'number'=>3,
+            'description'=>null,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+
+        ]); 
     }
 }

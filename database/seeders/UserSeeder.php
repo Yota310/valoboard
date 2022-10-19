@@ -34,7 +34,6 @@ class UserSeeder extends Seeder
             'stance_id'=>1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
-
         ]);
 
         DB::table('users')->insert([
@@ -53,9 +52,28 @@ class UserSeeder extends Seeder
             'stance_id'=>2,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'エイムゴリラ',
+            'profile' => 'お尻',
+            'email'=>'aaabbbccc@gmail.com',
+            'password'=>Hash::make('aaiiuueeoo2'),
+            'age'=>10,
+            'moral'=>1,
+            'sns1'=>'https://www.google.com/search?q=a&oq=a&aqs=chrome..69i57j69i60l4j5l3.2043j0j1&sourceid=chrome&ie=UTF-8',
+            'sns2'=>'https://www.google.com/search?q=a&oq=a&aqs=chrome..69i57j69i60l4j5l3.2043j0j1&sourceid=chrome&ie=UTF-8',
+            'image_path'=>null,
+            'rank_id'=>2,
+            'role_id'=>2,
+            'time_id'=>2,
+            'stance_id'=>3,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
 
 
         ]);
+
     }
 }
 
