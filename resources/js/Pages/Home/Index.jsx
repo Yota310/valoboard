@@ -34,19 +34,19 @@ const Index = (props) => {
 
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
-                                    <div className="flex p-2 bg-black rounded-xl">
-                                        <div className="p-3 bg-white rounded-full w-1/5"><Link href="" className="no-underline">{user.name}</Link></div>
-                                        <div className="bg-white rounded-full p-3 w-1/6">{user.rank_id} aaaaaaaaaa</div>
-                                        <div className="bg-white rounded-full p-3 w-1/6">{user.role_id} aaaaaaaaa</div>
-                                        <div className="bg-white rounded-full p-3 w-1/6">{user.stance_id}aaaaaaaaa</div>
-                                        <div className="bg-white rounded-full p-3 w-1/6">{user.time_id}aaa aaaaaaaaa</div>
-                                        <div className="bg-white rounded-full p-3 w-1/6">{user.moral}aaaaaaaaaaaaaaaaa</div>
-                                    </div>
-
-
-
-
+                                <div className="flex p-2 rounded-xl">
+                                    <div className="p-3 bg-white border-4 border-black rounded-l-xl w-1/5"><Link href="" className="no-underline">{user.name}</Link></div>
+                                    <div className="bg-white border-4 border-r-0 border-black  p-3 w-1/6">{user.rank.name}</div>
+                                    <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6">{user.role.name}</div>
+                                    <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6">{user.stance.number}</div>
+                                    <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6">{user.time.day}</div>
+                                    <div className="bg-white border-4 border-black rounded-r-xl p-3 w-1/6">{user.moral.number}</div>
                                 </div>
+
+
+
+
+                            </div>
                             ))
 
                             }

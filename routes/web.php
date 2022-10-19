@@ -28,6 +28,14 @@ use App\Http\Controllers\HomeController;
 
         Route::get("/",[HomeController::class,"index"]);
 
+Route::get("/mypage/{user}",[HomeController::class,"mypage"]);
+
+Route::get("/mypage",[HomeController::class,"mypage"]);
+
+Route::get("/register",[HomeController::class,"register"]);
+
+Route::get("/search",[HomeController::class,"search"]);
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

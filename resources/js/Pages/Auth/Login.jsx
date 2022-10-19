@@ -81,7 +81,7 @@ export default function Login({ status, canResetPassword }) {
                     <div className="flex items-center mt-4">
                        
 
-                        <PrimaryButton className="ml-4 text-xl hover:text-red-500" processing={processing}>
+                        <PrimaryButton href="/mypage" className="ml-4 text-xl hover:text-red-500" processing={processing}>
                             ログイン
                     </PrimaryButton>
 

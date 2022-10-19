@@ -28,19 +28,20 @@ export default function Guest({ children }) {
                         </div>
 
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <NavLink href="/login" active={route().current('dashboard')}>
-                                ログイン
-                            </NavLink>
-                        </div>
-
-                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <NavLink href="/" active={route().current('dashboard')}>
+                            <NavLink href="/mypage" active={route().current('dashboard')}>
                                 マイページ
                             </NavLink>
                         </div>
 
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <NavLink href="/" active={route().current('dashboard')}>
+                            <NavLink href="/login" active={route().current('dashboard')}>
+                                ログイン
+                            </NavLink>
+                        </div>
+
+
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink href="/register" active={route().current('dashboard')}>
                                 新規登録
                             </NavLink>
                         </div>
@@ -83,7 +84,7 @@ export default function Guest({ children }) {
 
                                 <Dropdown.Content>
                                     <Dropdown.Link href={route('logout')} method="post" as="button">
-                                        Log Out
+                                        ログアウト
                                     </Dropdown.Link>
                                 </Dropdown.Content>
                             </Dropdown>
@@ -131,7 +132,7 @@ export default function Guest({ children }) {
 
                     <div className="mt-3 space-y-1">
                         <ResponsiveNavLink method="post" href={route('logout')} as="button">
-                            Log Out
+                            ログアウト
                         </ResponsiveNavLink>
                     </div>
                 </div>
