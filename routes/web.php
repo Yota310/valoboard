@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,15 +28,19 @@ use App\Http\Controllers\HomeController;
 // });
 
 
-        Route::get("/",[HomeController::class,"index"]);
+Route::get("/", [HomeController::class, "index"]);
 
-Route::get("/mypage/{user}",[HomeController::class,"mypage"]);
+Route::get("/mypage/{user}", [HomeController::class, "mypage"]);
 
-Route::get("/mypage",[HomeController::class,"mypage"]);
+Route::get("/mypage", [HomeController::class, "mypage"]);
 
-Route::get("/register",[HomeController::class,"register"]);
+Route::get("/register", [HomeController::class, "register"]);
 
-Route::get("/search",[HomeController::class,"search"]);
+Route::get("/search", [SearchController::class, "index"]);
+
+Route::get("/result", [SearchController::class, "show"]);
+
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -53,7 +59,7 @@ Route::post("/posts", [PostController::class, "store"]);
 Route::delete("/posts/{post}", [PostController::class, "delete"]);
 
 
-Route::get("/",[HomeController::class,"index"]);
+Route::get("/", [HomeController::class, "index"]);
 Route::get("/home", [PostController::class, "index"]);
 
 require __DIR__ . '/auth.php';

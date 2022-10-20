@@ -42,20 +42,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function Rank(){
+    public function Rank()
+    {
         return $this->belongsTo(Rank::class);
     }
 
-    public function Role(){
+    public function Role()
+    {
         return $this->belongsTo(Role::class);
     }
 
-    public function Stance(){
+    public function Stance()
+    {
         return $this->belongsTo(Stance::class);
     }
 
 
-    public function Time(){
+    public function Time()
+    {
         return $this->belongsTo(Time::class);
     }
+
+    // public function searchUser($word)
+    // {
+    //     return User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->get();
+    // }
 }
