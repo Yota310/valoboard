@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('stances', function (Blueprint $table) {
             $table->id();
-            $table->integer('number');
-            $table->string('description')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }

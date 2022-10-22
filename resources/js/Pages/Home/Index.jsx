@@ -44,7 +44,7 @@ const Index = (props) => {
                                         <div className="bg-white border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}</div>
                                         <div className="bg-white border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
                                         <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
-                                            {user.stance.number == 1 ? (<p>ゆるく</p>) : (user.stance.number == 2 ? (<p>ガチで</p>) : (<p>初心者</p>))
+                                            {user.stance.id == 1 ? (<p>{user.stance.name}</p>) : (user.stance.id == 2 ? (<p>{user.stance.id}</p>) : (<p>{user.stance.name}</p>))
                                             }
                                         </div>
                                         <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
