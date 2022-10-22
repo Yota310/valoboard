@@ -16,8 +16,8 @@ class RankSeeder extends Seeder
     public function run()
     {
         DB::table('ranks')->insert([
-            'name'=>'アイアン',
-            'number' =>1,
+            'name'=>'アイアン1',
+            'number' =>'1',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
@@ -25,8 +25,8 @@ class RankSeeder extends Seeder
 
 
         DB::table('ranks')->insert([
-            'name'=>'アイアン',
-            'number' =>2,
+            'name'=>'アイアン2',
+            'number' =>'2',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 

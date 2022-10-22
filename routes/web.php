@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,13 @@ use App\Http\Controllers\SearchController;
 
 Route::get("/", [HomeController::class, "index"]);
 
-Route::get("/mypage/{user}", [HomeController::class, "mypage"]);
+Route::get("/mypage/{user}", [MypageController::class, "index"]);
 
-Route::get("/mypage", [HomeController::class, "mypage"]);
+Route::get("/mypage", [MypageController::class, "index"]);
+
+Route::get("/mypage/{user}/edit",[MypageController::class,"edit"]);
+
+Route::put("/mypage/{user}/update",[MypageController::class,"update"]);
 
 Route::get("/register", [HomeController::class, "register"]);
 

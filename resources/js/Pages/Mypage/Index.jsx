@@ -3,6 +3,8 @@ import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import Guest from "@/Layouts/GuestLayout";
 import { Link } from '@inertiajs/inertia-react';
+import Rating from '@mui/material/Rating';
+
 
 
 
@@ -24,9 +26,8 @@ const Index = (props) => {
     return (
         <div>
             {auth.user != null ? (
-
-
-                <Authenticated auth={auth}>
+                auth.user.id == auth_user.id ? (
+                    <Authenticated auth={auth}>
 
                     <div>
                         <div className="p-7">
@@ -34,25 +35,57 @@ const Index = (props) => {
 
 
                             <div className="mb-8">
-                                <div className="p-2rounded-xl bg-black">
-                                    <div className="p-7 m-3 bg-white rounded-full w-1/5 mx-auto">{auth.user.name}</div>
-                                    <div className="bg-white rounded-full p-7 m-3 w-1/5">{auth_user.rank.name}</div>
-                                    <div className="bg-white rounded-full p-7 w-1/5 m-3">{auth_user.role.name}</div>
-                                    <div className="bg-white rounded-full p-7 w-1/5 m-3">{auth_user.stance.description}</div>
-                                    <div className="bg-white rounded-full p-7 w-1/5 m-3">{auth_user.time_id}aaa aaaaaaaaa</div>
-                                    <div className="bg-white rounded-full p-7 w-1/5 m-3">{auth_user.moral}aaaaaaaaaaaaaaaaa</div>
+                                <div className="p-2 rounded-xl boarder-black">
+                                    <div className="flex">
+                                    <div><img className="rounded-full h-36" src="https://iconbu.com/wp-content/uploads/2022/10/%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%81%8A%E3%81%B0%E3%81%91%E3%81%95%E3%82%93.jpg"></img></div>
+
+                                   <div className="pl-20 text-text-black ">
+                                    <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
+                                    <p className="text-left font-black text-4xl mt-5">ランク</p>
+                                    <p className="text-left font-black text-4xl mt-5">ロール</p>
+                                    <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
+                                    <p className="text-left font-black text-4xl mt-5">時間帯</p>
+                                    <p className="text-left font-black text-4xl mt-5">民度</p> 
+
+                                    </div>
+
+                                    <div className="pl-20 text-text-black pt-1">
+                                    <p className="border-black text-left font-black text-5xl rounded-l-xl">　</p>
+                                    <p className="text-left font-medium text-4xl mt-5">{auth_user.rank.name}</p>
+                                    <p className="text-left font-medium text-4xl mt-5">{auth_user.role.name}</p>
+                                    <p className="text-left font-medium text-4xl mt-5">{auth_user.stance.name}</p>
+                                    <p className="text-left font-medium text-4xl mt-5">{auth_user.time.day}</p>
+                                    <p className="text-left font-black text-4xl mt-5">
+
+                                        {/* <Typography component="legend">Read only</Typography> */}
+                                        <Rating size="large" name="read-only" value={auth_user.moral} readOnly />
+
+
+
+                                    
+                                    </p> 
+
+                                    </div>
+                                    
+                                 
                                 </div>
 
 
 
 
                             </div>
-                            )
+                            
 
 
                         </div>
                     </div>
+                    </div>
                 </Authenticated>
+                
+                ):(
+                    <p>ko</p>
+                )
+            
             ) : (
 
 

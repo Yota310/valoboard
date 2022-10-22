@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('number');
+            $table->string('number');
             $table->timestamps();
         });
     }
