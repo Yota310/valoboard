@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import Guest from "@/Layouts/GuestLayout";
@@ -13,7 +13,9 @@ const Index = (props) => {
     const { auth_user, auth, ranks, roles, stances } = props;
     console.log("neko", props);
 
-    const { data, setData, put } = useForm({
+    const { data, setData, post } = useForm({
+        image:"",
+
 
         image_path: auth_user.image_path,
         name: auth_user.name,
@@ -26,14 +28,19 @@ const Index = (props) => {
 
     })
 
+    const[preview,setPreview]=useState('');
 
     const handleSendData = (e) => {
         console.log("ここまで恋");
         e.preventDefault();
-        put(`/mypage/${auth.user.id}/update`);
+        post(`/mypage/${auth.user.id}/update`);
     };
 
 
+    const handleChangeFile = (e) => { //プレビューの表示用
+        const { files } =e.target;
+        setPreview(window.URL.createObjectURL(files[0]));
+    };
 
 
 
@@ -62,37 +69,36 @@ const Index = (props) => {
                                 </div>
                                 <form onSubmit={handleSendData}>
 
-
-                                <input type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
-
+                                    <input type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
 
 
 
-                                <select onChange={(e) => setData("rank", e.target.value)}>
-                                                    <option default>ランク選択</option>
-                                                    <option value="アイアン">アイアン</option>
-                                                    <option value="ブロンズ">ブロンズ</option>
-                                                    <option value="シルバー">シルバー</option>
-                                                    <option value="ゴールド">ゴールド</option>
-                                                    <option value="プラチナ">プラチナ</option>
-                                                    <option value="ダイヤモンド">ダイヤ</option>
-                                                    <option value="アセンダント">アセンダント</option>
-                                                    <option value="イモータル">イモータル</option>
-                                                    <option value="レディアント">レディアント</option>
 
-                                                </select>
+                                    <select onChange={(e) => setData("rank", e.target.value)}>
+                                        <option default>ランク選択</option>
+                                        <option value="アイアン">アイアン</option>
+                                        <option value="ブロンズ">ブロンズ</option>
+                                        <option value="シルバー">シルバー</option>
+                                        <option value="ゴールド">ゴールド</option>
+                                        <option value="プラチナ">プラチナ</option>
+                                        <option value="ダイヤモンド">ダイヤ</option>
+                                        <option value="アセンダント">アセンダント</option>
+                                        <option value="イモータル">イモータル</option>
+                                        <option value="レディアント">レディアント</option>
 
-
-
-                                <select onChange={(e) => setData("number", e.target.value)}>
-                                                    <option default>ランク番号</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
+                                    </select>
 
 
-                                                <br />
+
+                                    <select onChange={(e) => setData("number", e.target.value)}>
+                                        <option default>ランク番号</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+
+
+                                    <br />
 
 
 
@@ -129,8 +135,26 @@ const Index = (props) => {
 
 
 
+
                                     <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+
+
+
+
+
+                                    <div>
+                        <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
+                        <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />  {/*変更後のプレビューを表示*/}
+                        <input className="mt-2 mb-4" type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
+                        <span className="text-red-600">{props.errors.image}</span>
+                    </div>
+
+
+
+                                    <div>
                                     <button type="submit" className="bg-red-500">変更</button>
+                                    </div>
+
                                 </form>
 
 

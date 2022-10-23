@@ -37,7 +37,7 @@ Route::get("/mypage", [MypageController::class, "index"]);
 
 Route::get("/mypage/{user}/edit",[MypageController::class,"edit"]);
 
-Route::put("/mypage/{user}/update",[MypageController::class,"update"]);
+Route::post("/mypage/{user}/update",[MypageController::class,"update"]);
 
 Route::get("/register", [HomeController::class, "register"]);
 

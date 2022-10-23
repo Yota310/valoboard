@@ -10,7 +10,7 @@ import Rating from '@mui/material/Rating';
 
 const Index = (props) => {
     const { auth_user, auth, } = props;
-    console.log("neko", props);
+   // console.log("neko", auth_user.image_path);
 
 
     const handleDeletePost = (id) => {
@@ -37,7 +37,7 @@ const Index = (props) => {
                             <div className="mb-8">
                                 <div className="p-2 rounded-xl boarder-black">
                                     <div className="flex">
-                                    <div><img className="rounded-full h-36" src="https://iconbu.com/wp-content/uploads/2022/10/%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%81%8A%E3%81%B0%E3%81%91%E3%81%95%E3%82%93.jpg"></img></div>
+                                    <div><img className="rounded-full h-20" src={auth_user.image_path}/></div>
 
                                    <div className="pl-20 text-text-black ">
                                     <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
