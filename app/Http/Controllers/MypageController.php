@@ -25,8 +25,18 @@ class MypageController extends Controller
         return Inertia::render("Mypage/Edit",["auth_user" => $auth_user,"ranks"=>$rank->get(),"roles"=>$role->get(),"stances"=>$stance->get()]);
     }
 
-    public function update(Request $request){
-        dd($request);
+    public function update(Request $request ,User $user,Rank $rank){
+        $form = $request->all(); //リクエストの全ての情報を$formに入れる
+        $user->fill($form); //保存したい情報か確認
+
+        $rank_name = $request->input('rank'); //リクエストからランク名だけ取り出す
+        $rank_number = $request->input('number'); //番号だけ取り出す
+        $new_rank = $rank->where('name',$rank_name)->where('number',$rank_number)->first(['id']); //ランク名と番号から絞り込む
+        $user->rank_id = $new_rank->id; //ユーザーのrank_idを変更
+
+        $user->save();
+        
+        return redirect("/mypage/".$user->id);
     }
 
 }
