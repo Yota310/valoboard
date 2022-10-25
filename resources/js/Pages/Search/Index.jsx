@@ -9,6 +9,7 @@ const Index = (props) => {
 
     const [word, setWord] = useState("");
     const [rank, setRank] = useState(null);
+    const [number, setNumber] = useState(null);
     const [role, setRole] = useState(null);
     const [stance, setStance] = useState(null);
     const [time, setTime] = useState(null);
@@ -18,7 +19,7 @@ const Index = (props) => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        Inertia.get(`/result`, { word: word, rank: rank, role: role, stance: stance, time: time, });
+        Inertia.get(`/result`, { word: word, rank: rank, role: role, stance: stance, time: time,number: number, });
     };
 
 
@@ -34,12 +35,22 @@ const Index = (props) => {
 
                         <select onChange={(e) => setRank(e.target.value)}>
                             <option default>ランク選択</option>
-                            {ranks.map((rank) => (
+                            <option value="アイアン">アイアン</option>
+                            <option value="ブロンズ">ブロンズ</option>
+                            <option value="シルバー">シルバー</option>
+                            <option value="ゴールド">ゴールド</option>
+                            <option value="プラチナ">プラチナ</option>
+                            <option value="ダイヤモンド">ダイヤ</option>
+                            <option value="アセンダント">アセンダント</option>
+                            <option value="イモータル">イモータル</option>
+                            <option value="レディアント">レディアント</option>
 
-                                <option key={rank.id} value={rank.id}>{rank.name}{rank.number}</option>
-                            )
-                            )
-                            }
+                        </select>
+                        <select onChange={(e) => setNumber(e.target.value)}>
+                            <option default>ランク番号</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
 
                         </select>
 

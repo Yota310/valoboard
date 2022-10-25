@@ -70,6 +70,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Time::class);
     }
+    public function Moral()
+    {
+        return $this->hasMany(Moral::class);
+    }
 
     // public function searchUser($word)
     // {

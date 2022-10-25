@@ -6,9 +6,9 @@ import { Link } from '@inertiajs/inertia-react';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
+//import Typography from '@mui/material/Typography';
 //import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import AccessibilityIcon from '@mui/material/Accessibility';
+
 
 
 const Index = (props) => {
@@ -52,7 +52,7 @@ const Index = (props) => {
                                         <div className="bg-white border-4 text-gray-600 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
                                         <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
 
-                                            <RocketLaunchIcon />
+                                            
 
 
                                             <Box
