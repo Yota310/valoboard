@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import Guest from "@/Layouts/GuestLayout";
@@ -14,7 +14,7 @@ const Index = (props) => {
     console.log("neko", props);
 
     const { data, setData, post } = useForm({
-        image:"",
+        image: "",
 
 
         image_path: auth_user.image_path,
@@ -28,7 +28,7 @@ const Index = (props) => {
 
     })
 
-    const[preview,setPreview]=useState('');
+    const [preview, setPreview] = useState('');
 
     const handleSendData = (e) => {
         console.log("ここまで恋");
@@ -38,7 +38,7 @@ const Index = (props) => {
 
 
     const handleChangeFile = (e) => { //プレビューの表示用
-        const { files } =e.target;
+        const { files } = e.target;
         setPreview(window.URL.createObjectURL(files[0]));
     };
 
@@ -63,97 +63,99 @@ const Index = (props) => {
                                     <p className="text-left font-black text-4xl mt-5">ランク</p>
                                     <p className="text-left font-black text-4xl mt-5">ロール</p>
                                     <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                    <p className="text-left font-black text-4xl mt-5">時間帯</p>
+                                    {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
                                     <p className="text-left font-black text-4xl mt-5">コメント</p>
 
                                 </div>
                                 <form onSubmit={handleSendData}>
 
-                                    <input type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
-
-
-
-
-                                    <select onChange={(e) => setData("rank", e.target.value)}>
-                                        <option default>ランク選択</option>
-                                        <option value="アイアン">アイアン</option>
-                                        <option value="ブロンズ">ブロンズ</option>
-                                        <option value="シルバー">シルバー</option>
-                                        <option value="ゴールド">ゴールド</option>
-                                        <option value="プラチナ">プラチナ</option>
-                                        <option value="ダイヤモンド">ダイヤ</option>
-                                        <option value="アセンダント">アセンダント</option>
-                                        <option value="イモータル">イモータル</option>
-                                        <option value="レディアント">レディアント</option>
-
-                                    </select>
-
-
-
-                                    <select onChange={(e) => setData("number", e.target.value)}>
-                                        <option default>ランク番号</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
+                                    <input className="ml-5" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
 
 
                                     <br />
+                                    <div className="mt-5 ml-5">
+                                        <select onChange={(e) => setData("rank", e.target.value)}>
+                                            <option default>ランク選択</option>
+                                            <option value="アイアン">アイアン</option>
+                                            <option value="ブロンズ">ブロンズ</option>
+                                            <option value="シルバー">シルバー</option>
+                                            <option value="ゴールド">ゴールド</option>
+                                            <option value="プラチナ">プラチナ</option>
+                                            <option value="ダイヤモンド">ダイヤ</option>
+                                            <option value="アセンダント">アセンダント</option>
+                                            <option value="イモータル">イモータル</option>
+                                            <option value="レディアント">レディアント</option>
+
+                                        </select>
+
+                                   
+                                 
+                                        <select onChange={(e) => setData("number", e.target.value)}>
+                                            <option default>ランク番号</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+
+                                        </div>
+                                      
+
+
+                                        <div className="mt-5 ml-5">
+                                        <select onChange={(e) => setData("role", e.target.value)}>
+                                            <option default>ロール選択</option>
+                                            {roles.map((role) => (
+
+                                                <option key={role.id} value={role.id}>{role.name}</option>
+                                            )
+                                            )
+
+
+                                            }
+                                        </select>
+                                        </div>
+                                      
 
 
 
-                                    <select onChange={(e) => setData("role", e.target.value)}>
-                                        <option default>ロール選択</option>
-                                        {roles.map((role) => (
 
-                                            <option key={role.id} value={role.id}>{role.name}</option>
-                                        )
-                                        )
+                                        <div className="mt-5 ml-5">
+                                        <select onChange={(e) => setData("stance", e.target.value)}>
+                                            <option default>プレイスタイル選択</option>
+                                            {stances.map((stance) => (
 
-
-                                        }
-                                    </select>
-                                    <br />
+                                                <option key={stance.id} value={stance.id}>{stance.name}</option>
+                                            )
+                                            )
 
 
-
-
-
-                                    <select onChange={(e) => setData("stance", e.target.value)}>
-                                        <option default>プレイスタイル選択</option>
-                                        {stances.map((stance) => (
-
-                                            <option key={stance.id} value={stance.id}>{stance.name}</option>
-                                        )
-                                        )
-
-
-                                        }
-                                    </select>
-                                    <br />
+                                            }
+                                        </select>
+                                        </div>
+                                        <br />
 
 
 
 
-
-                                    <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
-
-
-
-
-
-                                    <div>
-                        <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
-                        <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />  {/*変更後のプレビューを表示*/}
-                        <input className="mt-2 mb-4" type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
-                        <span className="text-red-600">{props.errors.image}</span>
-                    </div>
+                                        <div className="mt-5 ml-5">
+                                        <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+</div>
 
 
 
-                                    <div>
-                                    <button type="submit" className="bg-red-500">変更</button>
-                                    </div>
+
+                                        <div>
+                                            <h2 className="text-title-purple1 text-2xl ml-5">プロフィール画像</h2> {/*送信用*/}
+                                            <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />  {/*変更後のプレビューを表示*/}
+                                            <input className="mt-2 mb-4" type="file" onChange={(e) => { setData("image", e.target.files[0]); handleChangeFile(e); }} />
+                                            <span className="text-red-600">{props.errors.image}</span>
+                                        </div>
+
+
+
+                                        <div>
+                                            <button type="submit" className="bg-red-500">変更</button>
+                                        </div>
 
                                 </form>
 
@@ -166,13 +168,13 @@ const Index = (props) => {
 
 
 
+                            </div>
+
+
+
                         </div>
-
-
-
                     </div>
                 </div>
-            </div>
         </Authenticated>
 
 

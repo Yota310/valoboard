@@ -23,7 +23,7 @@ const Show = (props) => {
                     { users.map((user) => (
                         <div key={user.id} >
                             <div className="flex p-2 rounded-xl">
-                                <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href="" className="no-underline">{user.name}</Link></div>
+                                <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href={`/mypage/${user.id}`} className="no-underline">{user.name}</Link></div>
                                 <div className="bg-white border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}</div>
                                 <div className="bg-white border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
                                 <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.stance.name}
