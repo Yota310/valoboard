@@ -46,6 +46,7 @@ const Index = (props) => {
                             <option value="レディアント">レディアント</option>
 
                         </select>
+                        
                         <select onChange={(e) => setNumber(e.target.value)}>
                             <option default>ランク番号</option>
                             <option value="1">1</option>
@@ -64,6 +65,7 @@ const Index = (props) => {
                             }
 
                         </select>
+                       
 
                         <select onChange={(e) => setStance(e.target.value)}>
                             <option default>プレイスタイルを選択</option>
@@ -75,9 +77,10 @@ const Index = (props) => {
                             }
 
                         </select>
+                        
 
 
-                        <select onChange={(e) => setTime(e.target.value)}>
+                        {/* <select onChange={(e) => setTime(e.target.value)}>
                             <option default>時間を選択</option>
                             {times.map((time) => (
 
@@ -86,12 +89,18 @@ const Index = (props) => {
                             )
                             }
 
-                        </select>
+                        </select> */}
 
 
 
                         <button type="submit" className="bg-gray-400">検索</button>
+                        
                     </form>
+                    <span className="text-red-600">{props.errors.rank_id}</span>
+                    <br/>
+                        <span className="text-red-600">{props.errors.role_id}</span>
+                        <br/>
+                        <span className="text-red-600">{props.errors.stance_id}</span>
                 </Authenticated>
             ) : (
                 <Guest>

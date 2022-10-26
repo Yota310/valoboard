@@ -42,7 +42,7 @@ const Index = (props) => {
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
                                     <div className="flex rounded-xl shadow-lg mt-3 shadow-gray-500">
-                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href={`/mypage/${user.id}`} className="no-underline text-black hover:text-red-500">{user.name}</Link></div>
+                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href={`/mypage/${user.id}`} className="no-underline text-gray-600 hover:text-red-500">{user.name}</Link></div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
@@ -98,15 +98,15 @@ const Index = (props) => {
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
                                     <div className="flex p-2 rounded-xl">
-                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href="" className="no-underline text-red-500">{user.name}</Link></div>
-                                        <div className="bg-white border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
-                                        <div className="bg-white border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
-                                        <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
+                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4 shadow-lg mt-3 shadow-gray-500"><Link href="" className="no-underline text-gray-600 hover:text-red-500">{user.name}</Link></div>
+                                        <div className="bg-white border-4 border-r-0 border-black text-gray-600 text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
+                                        <div className="bg-white border-4 border-r-0 border-black p-3 w-1/4 text-gray-600 text-center pt-5 font-black text-3xl">{user.role.name}</div>
+                                        <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
                                             {user.stance.id == 1 ? (<p>ゆるく</p>) : (user.stance.id == 2 ? (<p>ガチで</p>) : (<p>初心者</p>))
                                             }
                                         </div>
-                                        <div className="bg-white border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
-                                        <div className="bg-white border-4 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
+                                        <div className="bg-white border-4 border-r-0 text-gray-600 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
+                                        <div className="bg-white border-4 border-black text-gray-600 rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
 
 
                                             <Box

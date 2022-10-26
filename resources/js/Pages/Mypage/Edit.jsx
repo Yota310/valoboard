@@ -60,11 +60,14 @@ const Index = (props) => {
 
                                 <div className="pl-20 text-text-black ">
                                     <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
-                                    <p className="text-left font-black text-4xl mt-5">ランク</p>
-                                    <p className="text-left font-black text-4xl mt-5">ロール</p>
+                                    <p className="text-left font-black text-4xl mt-5">ランク:{data.rank}{data.number}</p>
+                                    <p className="text-left font-black text-4xl mt-5">ロール:{data.role}</p>
                                     <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
+                                    <p className="text-left font-black text-4xl mt-5">:{data.stance}</p>
                                     {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
                                     <p className="text-left font-black text-4xl mt-5">コメント</p>
+                                    <p>:ゲームしてる時間やキャラを書こう！
+                                    </p>
 
                                 </div>
                                 <form onSubmit={handleSendData}>
@@ -135,7 +138,7 @@ const Index = (props) => {
                                         <br />
 
 
-
+<br />
 
                                         <div className="mt-5 ml-5">
                                         <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
