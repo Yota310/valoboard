@@ -10,21 +10,21 @@ import Rating from '@mui/material/Rating';
 
 
 const Index = (props) => {
-    const { auth_user, auth, ranks, roles, stances } = props;
+    const { mypage_user, auth, ranks, roles, stances } = props;
     console.log("neko", props);
 
     const { data, setData, post } = useForm({
         image: "",
 
 
-        image_path: auth_user.image_path,
-        name: auth_user.name,
-        rank: auth_user.rank.name,
-        number: auth_user.rank.number,
-        role: auth_user.role.id,
-        stance: auth_user.stance.name,
-        profile: auth_user.profile,
-        //time:auth_user.time.day,
+        image_path: mypage_user.image_path,
+        name: mypage_user.name,
+        rank: mypage_user.rank.name,
+        number: mypage_user.rank.number,
+        role: mypage_user.role.id,
+        stance: mypage_user.stance.name,
+        profile: mypage_user.profile,
+        //time:mypage_user.time.day,
 
     })
 

@@ -16,14 +16,14 @@ class MypageController extends Controller
    
     public function index(User $user)
     {
-        $auth_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
+        $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
         //$rank=User::find($user->id)->rank;
-        return Inertia::render("Mypage/Index", ["auth_user" => $auth_user]);
+        return Inertia::render("Mypage/Index", ["mypage_user" => $mypage_user]);
     }
 
     public function edit(User $user,Rank $rank,Role $role,Stance $stance,Time $time){
-        $auth_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
-        return Inertia::render("Mypage/Edit",["auth_user" => $auth_user,"ranks"=>$rank->get(),"roles"=>$role->get(),"stances"=>$stance->get()]);
+        $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
+        return Inertia::render("Mypage/Edit",["mypage_user" => $mypage_user,"ranks"=>$rank->get(),"roles"=>$role->get(),"stances"=>$stance->get()]);
     }
 
     public function update(Request $request ,User $user,Rank $rank){

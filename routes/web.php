@@ -7,6 +7,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\MoralController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,21 +31,47 @@ use App\Http\Controllers\MypageController;
 // });
 
 
-Route::get("/", [HomeController::class, "index"]);
+Route::controller(HomeController::class)->group(function(){
+    Route::get("/", "index");
+    Route::get("/register", "register");
+});
 
-Route::get("/mypage/{user}", [MypageController::class, "index"]);
+Route::controller(MypageController::class)->middleware('auth')->group(function(){
+    Route::get("/mypage/{user}/edit","edit");
+    Route::post("/mypage/{user}/update","update");
+});
 
-Route::get("/mypage", [MypageController::class, "index"]);
+Route::controller(MypageController::class)->group(function(){
+Route::get("/mypage/{user}","index");
+});
 
-Route::get("/mypage/{user}/edit",[MypageController::class,"edit"]);
 
-Route::post("/mypage/{user}/update",[MypageController::class,"update"]);
+Route::controller(SearchController::class)->group(function(){
+    Route::get("/search", "index");
+    Route::get("/result", "show");
+});
 
-Route::get("/register", [HomeController::class, "register"]);
+Route::controller(MoralController::class)->middleware('auth')->group(function(){
+    Route::post("/store", "store");
+});
 
-Route::get("/search", [SearchController::class, "index"]);
+//Route::get("/", [HomeController::class, "index"]);
 
-Route::get("/result", [SearchController::class, "show"]);
+//Route::get("/mypage/{user}", [MypageController::class, "index"]);
+
+//Route::get("/mypage", [MypageController::class, "index"]);
+
+//Route::get("/mypage/{user}/edit",[MypageController::class,"edit"]);
+
+//Route::post("/mypage/{user}/update",[MypageController::class,"update"]);
+
+//Route::get("/register", [HomeController::class, "register"]);
+
+//Route::get("/search", [SearchController::class, "index"]);
+
+//Route::get("/result", [SearchController::class, "show"]);
+
+//Route::post("/store", [MoralController::class, "store"]);
 
 
 
