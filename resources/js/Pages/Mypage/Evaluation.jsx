@@ -10,9 +10,9 @@ const Evaluation = (props) => {
     const { mypage_user, auth, moral } = props;
     // console.log("neko", mypage_user.image_path);
     const { data, setData, post } = useForm({
-        moral: null,
-        auth: auth.user.id,
-        mypage: mypage_user.id
+        star: null,
+        user_id: auth.user.id,
+        evaluated_user_id: mypage_user.id
     })
 
     const handleDeletePost = (id) => {
@@ -23,7 +23,7 @@ const Evaluation = (props) => {
 
     const handleSendStar = (e) => {
         e.preventDefault();
-        post("/store");
+        post(`/store/${mypage_user.id}`);
     }
 
     const moveToEdit = () => {
@@ -68,7 +68,7 @@ const Evaluation = (props) => {
                                             <Rating size="large"
                                                 name="simple-controlled"
                                                 onChange={(e) => {
-                                                    setData(moral, e.target.value);
+                                                    setData("star", e.target.value);
                                                 }}
                                             />
                                             <br />

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('morals', function (Blueprint $table) {
             $table->id();
-            $table->integer('star1');
+            $table->integer('star');
             $table->foreignId('user_id')->nullable()->constrained('users');
+            $table->foreignId('evaluated_user_id')->nullable()->constrained('users');
             $table->timestamps();
         });
     }

@@ -39,6 +39,7 @@ Route::controller(HomeController::class)->group(function(){
 Route::controller(MypageController::class)->middleware('auth')->group(function(){
     Route::get("/mypage/{user}/edit","edit");
     Route::post("/mypage/{user}/update","update");
+    Route::get("/mypage/{user}/evaluation","evaluation");
 });
 
 Route::controller(MypageController::class)->group(function(){
@@ -52,7 +53,7 @@ Route::controller(SearchController::class)->group(function(){
 });
 
 Route::controller(MoralController::class)->middleware('auth')->group(function(){
-    Route::post("/store", "store");
+    Route::post("/store/{user}", "store");
 });
 
 //Route::get("/", [HomeController::class, "index"]);

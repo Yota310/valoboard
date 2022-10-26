@@ -120,7 +120,7 @@ const Index = (props) => {
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">民度の評価</p>
+                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
 
 
                                             </div>
@@ -142,7 +142,7 @@ const Index = (props) => {
                                                         
                                                 
                                                 </p>
-
+<Link href={`/mypage/${mypage_user.id}/evaluation`}>民度を評価</Link>
 
                                             </div>
 

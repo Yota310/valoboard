@@ -21,6 +21,13 @@ class MypageController extends Controller
         return Inertia::render("Mypage/Index", ["mypage_user" => $mypage_user]);
     }
 
+    public function evaluation(User $user)
+    {
+        $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
+        //$rank=User::find($user->id)->rank;
+        return Inertia::render("Mypage/Evaluation", ["mypage_user" => $mypage_user]);
+    }
+
     public function edit(User $user,Rank $rank,Role $role,Stance $stance,Time $time){
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
         return Inertia::render("Mypage/Edit",["mypage_user" => $mypage_user,"ranks"=>$rank->get(),"roles"=>$role->get(),"stances"=>$stance->get()]);

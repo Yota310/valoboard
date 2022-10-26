@@ -28,7 +28,7 @@ export default function Guest({ children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/mypage" active={route().current('dashboard')}>
+                                <NavLink href="/login" active={route().current('dashboard')}>
                                     マイページ
                             </NavLink>
                             </div>
