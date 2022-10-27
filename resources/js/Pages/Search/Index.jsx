@@ -105,7 +105,79 @@ const Index = (props) => {
             ) : (
                 <Guest>
 
-                    <input type="text" placeholder="Type here" className="input input-bordered input-secondary w-full max-w-xs" />
+<div>検索</div>
+                    <form onSubmit={handleSearch}>
+
+                        <input type="text" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前を入力してください" className="input input-bordered input-secondary w-full max-w-xs" />
+
+                        <select onChange={(e) => setRank(e.target.value)}>
+                            <option default>ランク選択</option>
+                            <option value="アイアン">アイアン</option>
+                            <option value="ブロンズ">ブロンズ</option>
+                            <option value="シルバー">シルバー</option>
+                            <option value="ゴールド">ゴールド</option>
+                            <option value="プラチナ">プラチナ</option>
+                            <option value="ダイヤモンド">ダイヤ</option>
+                            <option value="アセンダント">アセンダント</option>
+                            <option value="イモータル">イモータル</option>
+                            <option value="レディアント">レディアント</option>
+
+                        </select>
+                        
+                        <select onChange={(e) => setNumber(e.target.value)}>
+                            <option default>ランク番号</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+
+                        </select>
+
+                        <select onChange={(e) => setRole(e.target.value)}>
+                            <option default>ロールを選択</option>
+                            {roles.map((role) => (
+
+                                <option key={role.id} value={role.id}>{role.name}</option>
+                            )
+                            )
+                            }
+
+                        </select>
+                       
+
+                        <select onChange={(e) => setStance(e.target.value)}>
+                            <option default>プレイスタイルを選択</option>
+                            {stances.map((stance) => (
+
+                                <option key={stance.id} value={stance.id}>{stance.name}</option>
+                            )
+                            )
+                            }
+
+                        </select>
+                        
+
+
+                        {/* <select onChange={(e) => setTime(e.target.value)}>
+                            <option default>時間を選択</option>
+                            {times.map((time) => (
+
+                                <option key={time.id} value={time.id}>{time.day}</option>
+                            )
+                            )
+                            }
+
+                        </select> */}
+
+
+
+                        <button type="submit" className="bg-gray-400">検索</button>
+                        
+                    </form>
+                    <span className="text-red-600">{props.errors.rank_id}</span>
+                    <br/>
+                        <span className="text-red-600">{props.errors.role_id}</span>
+                        <br/>
+                        <span className="text-red-600">{props.errors.stance_id}</span>
                 </Guest>
             )
             }
