@@ -108,9 +108,9 @@ const Index = (props) => {
 <div>検索</div>
                     <form onSubmit={handleSearch}>
 
-                        <input type="text" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前を入力してください" className="input input-bordered input-secondary w-full max-w-xs" />
+                        <input type="text" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" className="input input-bordered input-secondary w-1/4 max-w-xs className=bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3" />
 
-                        <select onChange={(e) => setRank(e.target.value)}>
+                        <select onChange={(e) => setRank(e.target.value)}className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/4">
                             <option default>ランク選択</option>
                             <option value="アイアン">アイアン</option>
                             <option value="ブロンズ">ブロンズ</option>
@@ -123,16 +123,16 @@ const Index = (props) => {
                             <option value="レディアント">レディアント</option>
 
                         </select>
-                        
-                        <select onChange={(e) => setNumber(e.target.value)}>
+                    
+                        <select onChange={(e) => setNumber(e.target.value)}className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/4">
                             <option default>ランク番号</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
 
                         </select>
-
-                        <select onChange={(e) => setRole(e.target.value)}>
+<br/>
+                        <select onChange={(e) => setRole(e.target.value)}className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/4">
                             <option default>ロールを選択</option>
                             {roles.map((role) => (
 
@@ -142,9 +142,9 @@ const Index = (props) => {
                             }
 
                         </select>
-                       
+                    
 
-                        <select onChange={(e) => setStance(e.target.value)}>
+                        <select onChange={(e) => setStance(e.target.value)}className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-auto">
                             <option default>プレイスタイルを選択</option>
                             {stances.map((stance) => (
 
@@ -169,8 +169,8 @@ const Index = (props) => {
                         </select> */}
 
 
-
-                        <button type="submit" className="bg-gray-400">検索</button>
+<br/>
+                        <button type="submit" className="bg-black hover:text-red-500 text-white p-7 font-black">検索</button>
                         
                     </form>
                     <span className="text-red-600">{props.errors.rank_id}</span>
