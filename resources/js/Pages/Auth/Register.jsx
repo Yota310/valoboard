@@ -36,7 +36,7 @@ export default function Register() {
 
             <form onSubmit={submit}>
                 <div>
-                    <InputLabel forInput="name" value="名前（例：エイムゴリラ#0000)" className="p-3 ml-60" />
+                    <InputLabel forInput="name" value="ゲームのIDで登録してください（例：エイムゴリラ#0000)" className="p-3 ml-60" />
 
                     <TextInput
                         type="text"
