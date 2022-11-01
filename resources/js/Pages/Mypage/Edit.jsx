@@ -46,103 +46,104 @@ const Index = (props) => {
 
 
     return (
-        <Authenticated auth={auth}>
+        <div className="font-body1">
+            <Authenticated auth={auth}>
 
-            <div>
-                <div className="p-7">
-                    <h1>マイページ</h1>
+                <div>
+                    <div className="p-7">
+                        <h1>マイページ</h1>
 
 
-                    <div className="mb-8">
-                        <div className="p-2 rounded-xl boarder-black">
-                            <div className="flex">
-                                <div><img className="rounded-full h-36" src="https://iconbu.com/wp-content/uploads/2022/10/%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%81%8A%E3%81%B0%E3%81%91%E3%81%95%E3%82%93.jpg"></img></div>
+                        <div className="mb-8">
+                            <div className="p-2 rounded-xl boarder-black">
+                                <div className="flex">
+                                    <div><img className="rounded-full h-36" src="https://iconbu.com/wp-content/uploads/2022/10/%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%81%8A%E3%81%B0%E3%81%91%E3%81%95%E3%82%93.jpg"></img></div>
 
-                                <div className="pl-20 text-text-black ">
-                                    <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
-                                    <p className="text-left font-black text-4xl mt-5">ランク:{data.rank}{data.number}</p>
-                                    <p className="text-left font-black text-4xl mt-5">ロール:{data.role}</p>
-                                    <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                    <p className="text-left font-black text-4xl mt-5">:{data.stance}</p>
-                                    {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
-                                    <p className="text-left font-black text-4xl mt-5">コメント</p>
-                                    <p>:ゲームしてる時間やキャラを書こう！
+                                    <div className="pl-20 text-text-black ">
+                                        <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
+                                        <p className="text-left font-black text-4xl mt-5">ランク:{data.rank}{data.number}</p>
+                                        <p className="text-left font-black text-4xl mt-5">ロール:{data.role}</p>
+                                        <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
+                                        <p className="text-left font-black text-4xl mt-5">:{data.stance}</p>
+                                        {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
+                                        <p className="text-left font-black text-4xl mt-5">コメント</p>
+                                        <p>:ゲームしてる時間やキャラを書こう！
                                     </p>
 
-                                </div>
-                                <form onSubmit={handleSendData}>
+                                    </div>
+                                    <form onSubmit={handleSendData}>
 
-                                    <input className="ml-5" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
-
-
-                                    <br />
-                                    <div className="mt-5 ml-5">
-                                        <select onChange={(e) => setData("rank", e.target.value)}>
-                                            <option default>ランク選択</option>
-                                            <option value="アイアン">アイアン</option>
-                                            <option value="ブロンズ">ブロンズ</option>
-                                            <option value="シルバー">シルバー</option>
-                                            <option value="ゴールド">ゴールド</option>
-                                            <option value="プラチナ">プラチナ</option>
-                                            <option value="ダイヤモンド">ダイヤ</option>
-                                            <option value="アセンダント">アセンダント</option>
-                                            <option value="イモータル">イモータル</option>
-                                            <option value="レディアント">レディアント</option>
-
-                                        </select>
-
-                                   
-                                 
-                                        <select onChange={(e) => setData("number", e.target.value)}>
-                                            <option default>ランク番号</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select>
-
-                                        </div>
-                                      
+                                        <input className="ml-5" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
 
 
+                                        <br />
                                         <div className="mt-5 ml-5">
-                                        <select onChange={(e) => setData("role", e.target.value)}>
-                                            <option default>ロール選択</option>
-                                            {roles.map((role) => (
+                                            <select onChange={(e) => setData("rank", e.target.value)}>
+                                                <option default>ランク選択</option>
+                                                <option value="アイアン">アイアン</option>
+                                                <option value="ブロンズ">ブロンズ</option>
+                                                <option value="シルバー">シルバー</option>
+                                                <option value="ゴールド">ゴールド</option>
+                                                <option value="プラチナ">プラチナ</option>
+                                                <option value="ダイヤモンド">ダイヤ</option>
+                                                <option value="アセンダント">アセンダント</option>
+                                                <option value="イモータル">イモータル</option>
+                                                <option value="レディアント">レディアント</option>
 
-                                                <option key={role.id} value={role.id}>{role.name}</option>
-                                            )
-                                            )
+                                            </select>
 
 
-                                            }
-                                        </select>
+
+                                            <select onChange={(e) => setData("number", e.target.value)}>
+                                                <option default>ランク番号</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+
                                         </div>
-                                      
-
 
 
 
                                         <div className="mt-5 ml-5">
-                                        <select onChange={(e) => setData("stance", e.target.value)}>
-                                            <option default>プレイスタイル選択</option>
-                                            {stances.map((stance) => (
+                                            <select onChange={(e) => setData("role", e.target.value)}>
+                                                <option default>ロール選択</option>
+                                                {roles.map((role) => (
 
-                                                <option key={stance.id} value={stance.id}>{stance.name}</option>
-                                            )
-                                            )
+                                                    <option key={role.id} value={role.id}>{role.name}</option>
+                                                )
+                                                )
 
 
-                                            }
-                                        </select>
+                                                }
+                                            </select>
+                                        </div>
+
+
+
+
+
+                                        <div className="mt-5 ml-5">
+                                            <select onChange={(e) => setData("stance", e.target.value)}>
+                                                <option default>プレイスタイル選択</option>
+                                                {stances.map((stance) => (
+
+                                                    <option key={stance.id} value={stance.id}>{stance.name}</option>
+                                                )
+                                                )
+
+
+                                                }
+                                            </select>
                                         </div>
                                         <br />
 
 
-<br />
+                                        <br />
 
                                         <div className="mt-5 ml-5">
-                                        <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
-</div>
+                                            <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+                                        </div>
 
 
 
@@ -160,12 +161,12 @@ const Index = (props) => {
                                             <button type="submit" className="bg-red-500">変更</button>
                                         </div>
 
-                                </form>
+                                    </form>
 
 
 
 
-                            </div>
+                                </div>
 
 
 
@@ -178,9 +179,9 @@ const Index = (props) => {
                         </div>
                     </div>
                 </div>
-        </Authenticated>
+            </Authenticated>
 
-
+        </div>
     );
 };
 

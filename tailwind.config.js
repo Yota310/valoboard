@@ -13,6 +13,9 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                title: ["Chakra Petch"],
+                body: ["Sawarabi Mincho"],
+                body1: ["DotGothic16"],
             },
 
             colors: {

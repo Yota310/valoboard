@@ -11,7 +11,7 @@ export default function Authenticated({ auth, header, children }) {
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-black border-b border-gray-100 p-5">
-            <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white">VALO BOARD</div>
+                <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white font-title">VALO BOARD</div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black pt-2">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -20,7 +20,7 @@ export default function Authenticated({ auth, header, children }) {
                                     <ApplicationLogo className="block h-9 w-auto text-gray-500" />
                                 </Link>
                             </div>
-                        
+
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/" active={route().current('dashboard')}>
                                     トップ
@@ -49,9 +49,9 @@ export default function Authenticated({ auth, header, children }) {
                                     検索
                                 </NavLink>
                             </div>
-                        
 
-</div>
+
+                        </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
                             <div className="ml-3 relative">
@@ -145,13 +145,14 @@ export default function Authenticated({ auth, header, children }) {
 
             <main className="flex max-w-full justify-around">
                 <div className="w-1/6 bg-black text-white">
+
                     <p className="pt-6 pb-1 px-6">初心者🔰</p>
                     <p className="px-6 py-1">アンレ✨４以上</p>
                     <p className="px-6 py-1">コンペ✨４以上</p>
                     <p className="px-6 py-1">アンレ✨２以下</p>
                     <p className="px-6 py-1">コンペ✨２以下</p>
-                    <p className="px-6 py-1">こんばんは</p>
-                    <p className="px-6 py-1">こんばんは</p>
+                    <p className="px-6 py-1">サイドバー（仮）</p>
+                    <p className="px-6 py-1"></p>
                 </div>
 
                 <div className="w-5/6">{children}</div>

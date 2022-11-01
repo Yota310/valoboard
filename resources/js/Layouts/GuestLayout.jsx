@@ -152,8 +152,8 @@ export default function Guest({ children }) {
                     <p className="px-6 py-1">コンペ✨４以上</p>
                     <p className="px-6 py-1">アンレ✨２以下</p>
                     <p className="px-6 py-1">コンペ✨２以下</p>
-                    <p className="px-6 py-1">こんばんは</p>
-                    <p className="px-6 py-1">こんばんは</p>
+                    <p className="px-6 py-1">サイドバー（仮）</p>
+                    <p className="px-6 py-1"></p>
                 </div>
 
                 <div className="w-5/6">{children}</div>

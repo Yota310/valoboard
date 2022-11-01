@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Sawarabi+Mincho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=DotGothic16&family=Sawarabi+Mincho&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,10 +13,10 @@ h2 {
     @apply text-xl;
 }
 
-h3{
+h3 {
     @apply text-lg;
 }
 
-a{
+a {
     @apply text-blue-600 underline;
 }

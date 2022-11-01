@@ -17,7 +17,7 @@ const Show = (props) => {
 
 
     return (
-        <div>
+        <div className="font-body1">
             { auth.user != null ? (
                 <Authenticated auth={auth}>
                     { users.map((user) => (
