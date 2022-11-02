@@ -31,70 +31,71 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
-            <Head title="Log in" />
+        <div className="font-body1">
+            <GuestLayout>
+                <Head title="Log in" />
 
-            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
+                {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form className="text-center mt-10" onSubmit={submit}>
-                <div>
-                    <InputLabel forInput="email" value="メールアドレス" />
+                <form className="text-center mt-10" onSubmit={submit}>
+                    <div>
+                        <InputLabel forInput="email" value="メールアドレス" />
 
-                    <TextInput
-                        type="text"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-2/5 mx-auto"
-                        autoComplete="username"
-                        isFocused={true}
-                        handleChange={onHandleChange}
+                        <TextInput
+                            type="text"
+                            name="email"
+                            value={data.email}
+                            className="mt-1 block w-2/5 mx-auto"
+                            autoComplete="username"
+                            isFocused={true}
+                            handleChange={onHandleChange}
 
-                    />
+                        />
 
-                    <InputError message={errors.email} className="mt-2" />
-                </div>
+                        <InputError message={errors.email} className="mt-2" />
+                    </div>
 
-                <div className="mt-4">
-                    <InputLabel forInput="password" value="パスワード" />
+                    <div className="mt-4">
+                        <InputLabel forInput="password" value="パスワード" />
 
-                    <TextInput
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-2/5 mx-auto"
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
-                    />
+                        <TextInput
+                            type="password"
+                            name="password"
+                            value={data.password}
+                            className="mt-1 block w-2/5 mx-auto"
+                            autoComplete="current-password"
+                            handleChange={onHandleChange}
+                        />
 
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
+                        <InputError message={errors.password} className="mt-2" />
+                    </div>
 
-                <div className="block mt-4">
-                    <label>
-                        <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
+                    <div className="block mt-4">
+                        <label>
+                            <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-                        <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶しますか？</span>
-                    </label>
-                </div>
+                            <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶しますか？</span>
+                        </label>
+                    </div>
 
-                <div className="flex justify-center">
-                    <div className="flex items-center mt-4">
-                       
+                    <div className="flex justify-center">
+                        <div className="flex items-center mt-4">
 
-                        <PrimaryButton href="/mypage" className="ml-4 text-xl hover:text-red-500" processing={processing}>
-                            ログイン
+
+                            <PrimaryButton href="/mypage" className="ml-4 text-xl hover:text-red-500" processing={processing}>
+                                ログイン
                     </PrimaryButton>
 
-                    
 
+
+                        </div>
                     </div>
-                </div>
 
-                <div className="mt-10">
+                    <div className="mt-10">
 
-                {canResetPassword && (
-                            
-                            
+                        {canResetPassword && (
+
+
                             <Link
                                 href={route('password.request')}
                                 className="underline text-sm text-gray-600 hover:text-red-500"
@@ -102,8 +103,9 @@ export default function Login({ status, canResetPassword }) {
                                 パスワードをお忘れですか？？
                             </Link>
                         )}
-</div>
-            </form>
-        </GuestLayout>
+                    </div>
+                </form>
+            </GuestLayout>
+        </div>
     );
 }

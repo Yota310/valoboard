@@ -4,6 +4,7 @@ import { Head } from '@inertiajs/inertia-react';
 
 export default function Dashboard(props) {
     return (
+        <div className="font-body1">
         <AuthenticatedLayout
             auth={props.auth}
             errors={props.errors}
@@ -13,11 +14,12 @@ export default function Dashboard(props) {
 
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">ログイン完了!</div>
+                    <div className="overflow-hidden sm:rounded-lg">
+                        <div className="p-3  border-4 text-gray-600 bg-white border-black text-center pt-5 font-black text-3xl rounded-xl w-1/4">ログイン完了！</div>
                     </div>
                 </div>
             </div>
         </AuthenticatedLayout>
+        </div>
     );
 }

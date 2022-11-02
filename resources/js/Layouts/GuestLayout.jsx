@@ -11,7 +11,7 @@ export default function Guest({ children }) {
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-black border-b border-gray-100 p-5">
-                <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white">VALO BOARD</div>
+                <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white font-title">VALO BOARD</div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black pt-2">
                     <div className="flex justify-between h-16">
                         <div className="flex">
