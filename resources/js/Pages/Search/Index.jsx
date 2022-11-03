@@ -105,12 +105,12 @@ const Index = (props) => {
             ) : (
                 <Guest>
 
-                    <div>検索</div>
+<div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
                     <form onSubmit={handleSearch}>
 
-                        <input type="text" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前を入力してください" className="input input-bordered input-secondary w-full max-w-xs" />
+                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-16" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
 
-                        <select onChange={(e) => setRank(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-6 w-1/7" onChange={(e) => setRank(e.target.value)}>
                             <option default>ランク選択</option>
                             <option value="アイアン">アイアン</option>
                             <option value="ブロンズ">ブロンズ</option>
@@ -124,7 +124,7 @@ const Index = (props) => {
 
                         </select>
 
-                        <select onChange={(e) => setNumber(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black pt-5 text-left font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setNumber(e.target.value)}>
                             <option default>ランク番号</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -132,7 +132,7 @@ const Index = (props) => {
 
                         </select>
 
-                        <select onChange={(e) => setRole(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setRole(e.target.value)}>
                             <option default>ロールを選択</option>
                             {roles.map((role) => (
 
@@ -144,7 +144,7 @@ const Index = (props) => {
                         </select>
 
 
-                        <select onChange={(e) => setStance(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setStance(e.target.value)}>
                             <option default>プレイスタイルを選択</option>
                             {stances.map((stance) => (
 
@@ -170,7 +170,7 @@ const Index = (props) => {
 
 
 
-                        <button type="submit" className="bg-gray-400">検索</button>
+                        <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
                     <span className="text-red-600">{props.errors.rank_id}</span>

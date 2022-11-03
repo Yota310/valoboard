@@ -39,13 +39,13 @@ export default function Login({ status, canResetPassword }) {
 
                 <form className="text-center mt-10" onSubmit={submit}>
                     <div>
-                        <InputLabel forInput="email" value="メールアドレス" />
+                        <InputLabel forInput="email" value="メールアドレス" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto"/>
 
                         <TextInput
                             type="text"
                             name="email"
                             value={data.email}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-3 text-center pt-5 font-black text-3xl"
                             autoComplete="username"
                             isFocused={true}
                             handleChange={onHandleChange}
@@ -55,14 +55,14 @@ export default function Login({ status, canResetPassword }) {
                         <InputError message={errors.email} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
-                        <InputLabel forInput="password" value="パスワード" />
+                    <div className="mt-10">
+                        <InputLabel forInput="password" value="パスワード" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto"/>
 
                         <TextInput
                             type="password"
                             name="password"
                             value={data.password}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-3 text-center pt-5 font-black text-3xl"
                             autoComplete="current-password"
                             handleChange={onHandleChange}
                         />
@@ -72,7 +72,7 @@ export default function Login({ status, canResetPassword }) {
 
                     <div className="block mt-4">
                         <label>
-                            <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
+                            <Checkbox name="remember" value={data.remember} handleChange="{onHandleChange}"/>
 
                             <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶しますか？</span>
                         </label>

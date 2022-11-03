@@ -36,14 +36,14 @@ export default function Register() {
                 <Head title="Register" />
 
                 <form onSubmit={submit}>
-                    <div>
-                        <InputLabel forInput="name" value="ゲームのIDで登録してください（例：エイムゴリラ#0000)" className="p-3 ml-60" />
+                    <div className="mt-5">
+                        <InputLabel forInput="name" value="ゲームのIDで登録してください（例：エイムゴリラ#0000)" className="p-2 w-1/4 rounded-xl ml-auto mr-auto mb-4 font-black text-sm text-white leading-normal　mt-5 bg-black" />
 
                         <TextInput
                             type="text"
                             name="name"
                             value={data.name}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 text-center pt-5 font-black text-lg"
                             autoComplete="name"
                             isFocused={true}
                             handleChange={onHandleChange}
@@ -54,13 +54,13 @@ export default function Register() {
                     </div>
 
                     <div className="mt-4">
-                        <InputLabel forInput="email" value="Eメール" className="ml-60 p-3" />
+                        <InputLabel forInput="email" value="Eメール" className=" p-2 text-center w-1/4 rounded-xl ml-auto mr-auto mb-4 font-black text-lg text-white leading-normal　mt-5 bg-black" />
 
                         <TextInput
                             type="email"
                             name="email"
                             value={data.email}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 text-center pt-5 font-black text-lg"
                             autoComplete="username"
                             handleChange={onHandleChange}
                             required
@@ -70,13 +70,13 @@ export default function Register() {
                     </div>
 
                     <div className="mt-4">
-                        <InputLabel forInput="password" value="パスワード" className="ml-60 p-3" />
+                        <InputLabel forInput="password" value="パスワード" className="p-2 w-1/4 text-center rounded-xl ml-auto mr-auto mb-4 font-black text-lg text-white leading-normal　mt-5 bg-black" />
 
                         <TextInput
                             type="password"
                             name="password"
                             value={data.password}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 text-center pt-5 font-black text-lg"
                             autoComplete="new-password"
                             handleChange={onHandleChange}
                             required
@@ -86,13 +86,13 @@ export default function Register() {
                     </div>
 
                     <div className="mt-4">
-                        <InputLabel forInput="password_confirmation" value="パスワードの確認" className="ml-60 p-3" />
+                        <InputLabel forInput="password_confirmation" value="パスワードの確認" className="p-2 w-1/4 text-center rounded-xl ml-auto mr-auto mb-4 font-black text-lg text-white leading-normal　mt-5 bg-black" />
 
                         <TextInput
                             type="password"
                             name="password_confirmation"
                             value={data.password_confirmation}
-                            className="mt-1 block w-2/5 mx-auto"
+                            className="mt-0 block w-2/5 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 text-center pt-5 font-black text-lg"
                             handleChange={onHandleChange}
                             required
                         />

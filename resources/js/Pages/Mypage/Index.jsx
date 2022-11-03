@@ -103,23 +103,25 @@ const Index = (props) => {
                 ) : (
                     <Authenticated auth={auth}>
 
-                        <div>
+<div>
+                            <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">マイページ</h1>
                             <div className="p-7">
 
 
-                                <div className="mb-8">
-                                    <div className="p-2 rounded-xl boarder-black">
+                                <div className="mb-8 flex">
+                                    <p className="border-black text-left font-black text-5xl ml-5 rounded-l-xl">{mypage_user.name}</p>
+                                    <div className="p-2 rounded-xl boarder-black mr-auto ml-30">
                                         <div className="flex">
                                             <div><img className="rounded-full h-20" src={mypage_user.image_path} /></div>
 
                                             <div className="pl-20 text-text-black ">
-                                                <p className="text-gray-600　border-black text-left font-black text-5xl rounded-l-xl">{mypage_user.name}のページ</p>
+                                                <div className=" py-6 mt-1"></div>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ランク</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
+                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">時間帯</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
-
+                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
 
                                             </div>
 
@@ -128,19 +130,17 @@ const Index = (props) => {
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
-                                                {/* <p className="text-left font-medium text-4xl mt-5">{mypage_user.time.day}</p> */}
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.profile}</p>
-
+                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.time.day}</p>
                                                 <p className="text-left font-black text-4xl mt-5">
 
                                                     {/* <Typography component="legend">Read only</Typography> */}
-
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
-                                                    <br />
 
 
+
+                                                    <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
                                                 </p>
-                                                <Link href={`/mypage/${mypage_user.id}/evaluation`}>民度を評価</Link>
+                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.profile}</p>
 
                                             </div>
 
@@ -155,15 +155,10 @@ const Index = (props) => {
 
 
                                 </div>
-                                <div className="flex items-center mt-4">
-                                    <button onClick={moveToEdit}></button>
+                                <div className="flex">
 
 
-                                    {/* <button className="ml-4 text-xl hover:text-red-500">
-                                <Link href={`/mypage/${mypage_user.id}/edit`}>
-                                    編集
-                                </Link>
-                                </button> */}
+                               
 
                                 </div>
                             </div>

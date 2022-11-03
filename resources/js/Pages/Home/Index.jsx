@@ -49,7 +49,7 @@ const Index = (props) => {
                                             {user.stance.id == 1 ? (<p>{user.stance.name}</p>) : (user.stance.id == 2 ? (<p>{user.stance.name}</p>) : (<p>{user.stance.name}</p>))
                                             }
                                         </div>
-                                        <div className="bg-white border-4 text-gray-600 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
+                                    
                                         <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
 
 
@@ -93,7 +93,7 @@ const Index = (props) => {
                 >
                     <div>
                         <div className="p-7">
-                            <h1>新着の評価</h1>
+                            <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
 
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
@@ -105,7 +105,7 @@ const Index = (props) => {
                                             {user.stance.id == 1 ? (<p>{user.stance.name}</p>) : (user.stance.id == 2 ? (<p>{user.stance.name}</p>) : (<p>{user.stance.name}</p>))
                                             }
                                         </div>
-                                        <div className="bg-white border-4 text-gray-600 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">{user.time.day}</div>
+                                    
                                         <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
 
 

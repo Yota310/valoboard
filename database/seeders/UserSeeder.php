@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'こんちは',
+            'name' => '太郎#0001',
             'profile' => '今晩',
             'email'=>'aaa@gmail.com',
             'password'=>Hash::make('aaiiuueeoo'),
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'aisu',
+            'name' => 'aisu#0002',
             'profile' => 'uma',
             'email'=>'aaabbb@gmail.com',
             'password'=>Hash::make('aaiiuueeoo2'),
@@ -55,8 +55,8 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name' => 'エイムゴリラ',
-            'profile' => 'お尻',
+            'name' => 'エイムゴリラ#0003',
+            'profile' => 'ジュゲム、ジュゲム、ゴリラの擦り切れ、買い物ついでに営業妨害、風船わり住んでるところに住むゴリラ、あぐらゴリラにブラゴリラポパイポパイポパイのほうれん草',
             'email'=>'aaabbbccc@gmail.com',
             'password'=>Hash::make('aaiiuueeoo2'),
             'age'=>10,

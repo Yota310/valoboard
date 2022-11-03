@@ -23,10 +23,9 @@ export default function ForgotPassword({ status }) {
     return (
         <GuestLayout>
             <Head title="Forgot Password" />
-
-            <div className="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email address and we will email you a password
-                reset link that will allow you to choose a new one.
+<div className="mt-3 ml-3 mr-3 font-body1">
+            <div className="mb-4 p-1 font-black text-sm text-white leading-normal　mt-5 bg-black">
+                パスワードをお忘れですか？心配ありません！ここにEメールを入力して下されば新しいパスワードに変更できます！
             </div>
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -36,7 +35,7 @@ export default function ForgotPassword({ status }) {
                     type="text"
                     name="email"
                     value={data.email}
-                    className="mt-1 block w-full"
+                    className="mt-1 block w-full border-black border-4 font-black text-gray-600"
                     isFocused={true}
                     handleChange={onHandleChange}
                 />
@@ -44,11 +43,12 @@ export default function ForgotPassword({ status }) {
                 <InputError message={errors.email} className="mt-2" />
 
                 <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Email Password Reset Link
+                    <PrimaryButton className="ml-4 hover:text-red-500" processing={processing}>
+                        送信
                     </PrimaryButton>
                 </div>
             </form>
+            </div>
         </GuestLayout>
     );
 }
