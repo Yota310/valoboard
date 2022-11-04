@@ -52,7 +52,7 @@ const Index = (props) => {
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ランク</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">時間帯</p>
+
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
 
@@ -63,7 +63,7 @@ const Index = (props) => {
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.time.day}</p>
+
                                                 <p className="text-left font-black text-4xl mt-5">
 
                                                     {/* <Typography component="legend">Read only</Typography> */}
@@ -103,7 +103,7 @@ const Index = (props) => {
                 ) : (
                     <Authenticated auth={auth}>
 
-<div>
+                        <div>
                             <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">マイページ</h1>
                             <div className="p-7">
 
@@ -119,7 +119,7 @@ const Index = (props) => {
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ランク</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">時間帯</p>
+
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
                                                 <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
 
@@ -130,7 +130,7 @@ const Index = (props) => {
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.time.day}</p>
+
                                                 <p className="text-left font-black text-4xl mt-5">
 
                                                     {/* <Typography component="legend">Read only</Typography> */}
@@ -158,7 +158,7 @@ const Index = (props) => {
                                 <div className="flex">
 
 
-                               
+
 
                                 </div>
                             </div>

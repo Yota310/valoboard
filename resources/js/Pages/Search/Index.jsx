@@ -96,11 +96,11 @@ const Index = (props) => {
                         <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
-                    <span className="text-red-600">{props.errors.rank_id}</span>
+                    <span className="text-red-600">{props.errors.rank}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.role_id}</span>
+                    <span className="text-red-600">{props.errors.role}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.stance_id}</span>
+                    <span className="text-red-600">{props.errors.stance}</span>
                 </Authenticated>
             ) : (
                 <Guest>
@@ -132,7 +132,7 @@ const Index = (props) => {
 
                         </select>
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setRole(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-5 w-1/7" onChange={(e) => setRole(e.target.value)}>
                             <option default>ロールを選択</option>
                             {roles.map((role) => (
 
@@ -173,11 +173,11 @@ const Index = (props) => {
                         <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
-                    <span className="text-red-600">{props.errors.rank_id}</span>
+                    <span className="text-red-600">{props.errors.rank}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.role_id}</span>
+                    <span className="text-red-600">{props.errors.role}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.stance_id}</span>
+                    <span className="text-red-600">{props.errors.stance}</span>
                 </Guest>
             )
             }

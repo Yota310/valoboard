@@ -12,6 +12,10 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
+        moral:3,
+        rank_id:1,
+        role_id:1,
+        stance_id:1,
     });
 
     useEffect(() => {
@@ -99,6 +103,65 @@ export default function Register() {
 
                         <InputError message={errors.password_confirmation} className="mt-2" />
                     </div>
+
+
+
+
+
+
+                    <div className="mt-4">
+
+                        <TextInput //モラルの初期値の設定
+                            type="hidden"
+                            name="moral"
+                            value={data.moral}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                    </div>
+
+                    <div className="mt-4">
+
+                        <TextInput //ランクの初期値の設定
+                            type="hidden"
+                            name="rank"
+                            value={data.rank_id}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                    </div>
+
+                    <div className="mt-4">
+
+                        <TextInput //ロールの初期値の設定
+                            type="hidden"
+                            name="role"
+                            value={data.role_id}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                    </div>
+
+                    <div className="mt-4">
+
+                        <TextInput //スタンスの初期値の設定
+                            type="hidden"
+                            name="stance"
+                            value={data.satance_id}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                    </div>
+
+
+
+
+
+
 
                     <div className="flex justify-center">
                         <div className="flex items-center mt-4">

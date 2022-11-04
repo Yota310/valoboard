@@ -24,9 +24,9 @@ class SearchRequest extends FormRequest
     public function rules()
     {
         return [
-            'rank_id'=>'required',
-            'role_id'=>'required',
-            'stance_id'=>'required',
+        'rank'=>'required',
+         'role'=>'required',
+            'stance'=>'required',
         ];
     }
 }

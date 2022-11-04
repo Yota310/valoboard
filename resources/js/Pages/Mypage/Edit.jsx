@@ -62,7 +62,7 @@ const Index = (props) => {
                                     <div className="pl-20 text-text-black ">
                                         <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
                                         <p className="text-left font-black text-4xl mt-5">ランク:{data.rank}{data.number}</p>
-                                        <p className="text-left font-black text-4xl mt-5">ロール:{data.role}</p>
+                                        <p className="text-left font-black text-4xl mt-5">ロール:{mypage_user.role.name}</p>
                                         <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
                                         <p className="text-left font-black text-4xl mt-5">:{data.stance}</p>
                                         {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
@@ -158,7 +158,7 @@ const Index = (props) => {
 
 
                                         <div>
-                                            <button type="submit" className="bg-red-500">変更</button>
+                                            <button type="submit" className="bg-black text-white p-2 rounded-xl hover:text-red-500 font-black">変更</button>
                                         </div>
 
                                     </form>

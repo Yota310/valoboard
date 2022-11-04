@@ -4,20 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use App\Models\User;
-use App\Models\Rank;
-use App\Models\Role;
-use App\Models\Stance;
-use App\Models\Time;
+use App\Models\{User,Rank, Role, Stance,Moral};
 use Illuminate\Support\Facades\Storage;
 
 class MypageController extends Controller
 {
    
-    public function index(User $user)
+    public function index(User $user,Moral $moral)
     {
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
         //$rank=User::find($user->id)->rank;
+
+$moral->calculate($user);
         return Inertia::render("Mypage/Index", ["mypage_user" => $mypage_user]);
     }
 
@@ -28,7 +26,7 @@ class MypageController extends Controller
         return Inertia::render("Mypage/Evaluation", ["mypage_user" => $mypage_user]);
     }
 
-    public function edit(User $user,Rank $rank,Role $role,Stance $stance,Time $time){
+    public function edit(User $user,Rank $rank,Role $role,Stance $stance){
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
         return Inertia::render("Mypage/Edit",["mypage_user" => $mypage_user,"ranks"=>$rank->get(),"roles"=>$role->get(),"stances"=>$stance->get()]);
     }

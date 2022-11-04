@@ -43,6 +43,10 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'moral' => $request->moral, //ユーザーテーブルのモラルに初期値３を入れる
+            'rank_id' => $request->rank_id,
+            'role_id' => $request->role_id,
+            'stance_id' => $request->stance_id,
             'password' => Hash::make($request->password),
         ]);
 

@@ -73,7 +73,7 @@ const Evaluation = (props) => {
                                                     }}
                                                 />
                                                 <br />
-                                                <button type="submit" className="hover:text-red-500">送信</button>
+                                                <button type="submit" className="p-2 rounded-xl hover:text-red-500 bg-black text-white">送信</button>
                                             </form>
                                         </p>
 

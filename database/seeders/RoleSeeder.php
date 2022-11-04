@@ -16,28 +16,35 @@ class RoleSeeder extends Seeder
     public function run()
     {
         DB::table('roles')->insert([
-            'name'=>'デュエリスト',
+            'name' => '未設定',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('roles')->insert([
-            'name'=>'センチネル',
+            'name' => 'デュエリスト',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('roles')->insert([
-            'name'=>'イニシエーター',
+            'name' => 'センチネル',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('roles')->insert([
-            'name'=>'コントローラー',
+            'name' => 'イニシエーター',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+
+        ]);
+
+        DB::table('roles')->insert([
+            'name' => 'コントローラー',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
