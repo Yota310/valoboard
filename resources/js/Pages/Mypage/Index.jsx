@@ -150,94 +150,6 @@ const Index = (props) => {
                                         </div>
                                     </div>
 
-                                    <div className=" rounded-xl border-black border-2 mr-auto ml-auto bg-white pr-10 pb-5">
-                                        <div className="flex">
-                                            {/* <div>neko<img className="rounded-full h-20" src={auth.user.image_path} /></div> */}
-                                            {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
-
-
-                                            <div className="pl-20 text-text-black ">
-                                                <div className=" py-6 mt-1"></div>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">ランク</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
-
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
-                                                <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
-                                                <div className=" py-6 mt-1"></div>
-                                            </div>
-
-                                            <div className="pl-20  text-gray-600 pt-1">
-                                                <p className="border-black text-left font-black text-5xl rounded-l-xl">　</p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
-
-                                                <p className="text-left font-black text-4xl mt-5">
-
-                                                    {/* <Typography component="legend">Read only</Typography> */}
-                                                    <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
-
-                                                    <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
-
-
-                                                </p>
-                                                <p className="text-left font-medium text-4xl mt-5">{mypage_user.profile}</p>
-
-                                            </div>
-
-
-                                        </div>
-
-
-
-
-                                    </div>
-
-
-
-                                </div>
-                                <div className="flex">
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </Authenticated>
-                )
-
-            ) : (
-
-
-                <Guest>
-
-<div>
-                            <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">{mypage_user.name}のマイページ</h1>
-                            <div className="p-7">
-
-
-                                <div className="mb-8 flex">
-                                    <div className="border-black text-left font-black text-3xl ml-5 rounded-l-xl">{mypage_user.name}
-                                        <div className="h-48 w-48 my-0 mx-auto mt-5">
-                                            {mypage_user.image_path !== null ? (
-                                                <div>
-                                                    <img
-                                                        className="h-48 w-48 my-0 mx-auto rounded-full aspect-square object-cover border-2 border-gray-300"
-                                                        src={mypage_user.image_path}
-                                                    />
-                                                </div>
-                                            ) : (
-                                                <div>
-                                                    <img
-                                                        className="rounded-full border-2 aspect-square h-48 w-48"
-                                                        src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
-                                                    />
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
                                         <div className="flex w-">
                                             {/* <div>neko<img className="rounded-full h-20" src={auth.user.image_path} /></div> */}
@@ -266,7 +178,7 @@ const Index = (props) => {
                                                     {/* <Typography component="legend">Read only</Typography> */}
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
 
-                                                    <Link href={`/login`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
+                                                    <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
 
 
                                                 </p>
@@ -285,9 +197,93 @@ const Index = (props) => {
 
 
                                 </div>
-                              
+
                             </div>
                         </div>
+                    </Authenticated>
+                )
+
+            ) : (
+
+
+                <Guest>
+
+                    <div>
+                        <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">{mypage_user.name}のマイページ</h1>
+                        <div className="p-7">
+
+
+                            <div className="mb-8 flex">
+                                <div className="border-black text-left font-black text-3xl ml-5 rounded-l-xl">{mypage_user.name}
+                                    <div className="h-48 w-48 my-0 mx-auto mt-5">
+                                        {mypage_user.image_path !== null ? (
+                                            <div>
+                                                <img
+                                                    className="h-48 w-48 my-0 mx-auto rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                    src={mypage_user.image_path}
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <img
+                                                    className="rounded-full border-2 aspect-square h-48 w-48"
+                                                    src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
+                                    <div className="flex w-">
+                                        {/* <div>neko<img className="rounded-full h-20" src={auth.user.image_path} /></div> */}
+                                        {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
+
+
+                                        <div className="pl-10 pr-5 text-text-black">
+                                            <p className=" py-6 mt-1"></p>
+                                            <p className="text-gray-600 text-left font-black text-4xl mt-5">ランク</p>
+                                            <p className="text-gray-600 text-left font-black text-4xl mt-5">ロール</p>
+                                            <p className="text-gray-600 text-left font-black text-4xl mt-5">プレイスタイル</p>
+
+                                            <p className="text-gray-600 text-left font-black text-4xl mt-5">民度</p>
+                                            <p className="text-gray-600 text-left font-black text-4xl mt-5">コメント</p>
+                                            <div className=" py-6 mt-1"></div>
+                                        </div>
+
+                                        <div className="text-gray-600 pt-1 w-2/3">
+                                            <p className="border-black text-left font-black text-5xl rounded-l-xl">　</p>
+                                            <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
+                                            <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
+                                            <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
+
+                                            <p className="font-black text-4xl mt-5">
+
+                                                {/* <Typography component="legend">Read only</Typography> */}
+                                                <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
+
+                                                <Link href={`/login`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
+
+
+                                            </p>
+                                            <p className="text-left font-medium text-4xl mt-5">{mypage_user.profile}</p>
+
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
                 </Guest>
             )}
         </div>
