@@ -36,21 +36,49 @@ const Index = (props) => {
                 <Authenticated auth={auth}>
 
                     <div>
-                        <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
-                        <div className="p-4">
+                        <div className="p-7">
+                            <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
 
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
                                     <div className="flex rounded-xl shadow-lg mt-3 shadow-gray-500">
-                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href={`/mypage/${user.id}`} className="no-underline text-gray-600 hover:text-red-500">{user.name}</Link></div>
+                                        <div className="py-3 pl-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/3">
+
+                                            <div className="flex">
+
+                                                {user.image_path !== null ? (
+                                                    <div className="w-1/7">
+                                                        <img
+                                                            className="h-12 w-12 my-0 ml-0 rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                            src={user.image_path}
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-1/7">
+                                                        <img
+                                                            className="h-12 w-12 my-0 ml-0 rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                            src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
+                                                        />
+                                                    </div>
+                                                )}
+
+
+
+
+
+                                                <Link href={`/mypage/${user.id}`} className="no-underline text-gray-600 hover:text-red-500 ml-2">{user.name}</Link></div>
+
+                                        </div> {/*  flex */}
+
+
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
                                             {user.stance.id == 1 ? (<p>{user.stance.name}</p>) : (user.stance.id == 2 ? (<p>{user.stance.name}</p>) : (<p>{user.stance.name}</p>))
                                             }
                                         </div>
-                                    
-                                        <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
+
+                                        <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/7 text-center pt-5 font-black text-3xl">
 
 
 
@@ -98,15 +126,43 @@ const Index = (props) => {
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
                                     <div className="flex rounded-xl shadow-lg mt-3 shadow-gray-500">
-                                        <div className="p-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/4"><Link href={`/mypage/${user.id}`} className="no-underline text-gray-600 hover:text-red-500">{user.name}</Link></div>
+                                        <div className="py-3 pl-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/3">
+
+                                            <div className="flex">
+
+                                                {user.image_path !== null ? (
+                                                    <div className="w-1/7">
+                                                        <img
+                                                            className="h-12 w-12 my-0 ml-0 rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                            src={user.image_path}
+                                                        />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-1/7">
+                                                        <img
+                                                            className="h-12 w-12 my-0 ml-0 rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                            src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
+                                                        />
+                                                    </div>
+                                                )}
+
+
+
+
+
+                                                <Link href={`/mypage/${user.id}`} className="no-underline text-gray-600 hover:text-red-500 ml-2">{user.name}</Link></div>
+
+                                        </div> {/*  flex */}
+
+
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/4 text-center pt-5 font-black text-3xl">{user.role.name}</div>
                                         <div className="bg-white text-gray-600 border-4 border-r-0 border-black p-3 w-1/6 text-center pt-5 font-black text-3xl">
                                             {user.stance.id == 1 ? (<p>{user.stance.name}</p>) : (user.stance.id == 2 ? (<p>{user.stance.name}</p>) : (<p>{user.stance.name}</p>))
                                             }
                                         </div>
-                                    
-                                        <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/4 text-center pt-5 font-black text-3xl">
+
+                                        <div className="bg-white border-4 text-gray-600 border-black rounded-r-xl p-3 w-1/7 text-center pt-5 font-black text-3xl">
 
 
 

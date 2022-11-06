@@ -39,7 +39,7 @@ export default function Register() {
             <GuestLayout>
                 <Head title="Register" />
 
-                <form onSubmit={submit}>
+                <form onSubmit={submit} className="mb-5">
                     <div className="mt-5">
                         <InputLabel forInput="name" value="ゲームのIDで登録してください（例：エイムゴリラ#0000)" className="p-2 w-1/4 rounded-xl ml-auto mr-auto mb-4 font-black text-sm text-white leading-normal　mt-5 bg-black" />
 
@@ -106,7 +106,18 @@ export default function Register() {
 
 
 
-
+                    <div className="flex justify-center">
+                        <div className="flex items-center">
+                            <PrimaryButton className="ml-4 mt-5 text-xl hover:text-red-500" processing={processing}>
+                                登録
+                    </PrimaryButton>
+                        </div>
+                    </div>
+                    <div className="text-center mt-5">
+                        <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-red-500">
+                            すでに登録している方はこちらから
+                    </Link>
+                    </div>
 
 
                     <div className="mt-4">
@@ -157,25 +168,6 @@ export default function Register() {
 
                     </div>
 
-
-
-
-
-
-
-                    <div className="flex justify-center">
-                        <div className="flex items-center mt-4">
-                            <PrimaryButton className="ml-4 text-xl hover:text-red-500" processing={processing}>
-                                登録
-                    </PrimaryButton>
-                        </div>
-                    </div>
-
-                    <div className="text-center mt-5">
-                        <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-red-500">
-                            すでに登録している方はこちらから
-                    </Link>
-                    </div>
                 </form>
             </GuestLayout>
         </div>

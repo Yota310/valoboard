@@ -37,7 +37,7 @@ export default function Login({ status, canResetPassword }) {
 
                 {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-                <form className="text-center mt-10" onSubmit={submit}>
+                <form className="text-center mt-10 mb-5" onSubmit={submit}>
                     <div>
                         <InputLabel forInput="email" value="メールアドレス" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto"/>
 
@@ -91,19 +91,28 @@ export default function Login({ status, canResetPassword }) {
                         </div>
                     </div>
 
-                    <div className="mt-10">
+                    <div className="mt-10 mb-3">
 
                         {canResetPassword && (
 
 
                             <Link
                                 href={route('password.request')}
-                                className="underline text-sm text-gray-600 hover:text-red-500"
+                                className="underline text-sm text-gray-600 hover:text-red-50"
                             >
                                 パスワードをお忘れですか？？
                             </Link>
+
+                            
                         )}
+                        
                     </div>
+                    <Link
+                                href={route('register')}
+                                className="underline text-sm text-gray-600 hover:text-red-500"
+                            >
+                                新規登録はこちら！
+                            </Link>
                 </form>
             </GuestLayout>
         </div>

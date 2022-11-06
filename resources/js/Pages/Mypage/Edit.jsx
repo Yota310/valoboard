@@ -22,7 +22,7 @@ const Index = (props) => {
         rank: mypage_user.rank.name,
         number: mypage_user.rank.number,
         role: mypage_user.role.id,
-        stance: mypage_user.stance.name,
+        stance: mypage_user.stance.id,
         profile: mypage_user.profile,
         //time:mypage_user.time.day,
 
@@ -51,62 +51,72 @@ const Index = (props) => {
 
                 <div>
                     <div className="p-7">
-                        <h1>マイページ</h1>
+                        <h1 className="m- text-xl bg-black text-white pl-5 py-1 font-black">マイページの編集</h1>
 
 
                         <div className="mb-8">
                             <div className="p-2 rounded-xl boarder-black">
                                 <div className="flex">
-                                    <div><img className="rounded-full h-36" src="https://iconbu.com/wp-content/uploads/2022/10/%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%81%8A%E3%81%B0%E3%81%91%E3%81%95%E3%82%93.jpg"></img></div>
-
-                                    <div className="pl-20 text-text-black ">
-                                        <p className="border-black text-left font-black text-5xl rounded-l-xl">{auth.user.name}</p>
-                                        <p className="text-left font-black text-4xl mt-5">ランク:{data.rank}{data.number}</p>
-                                        <p className="text-left font-black text-4xl mt-5">ロール:{mypage_user.role.name}</p>
-                                        <p className="text-left font-black text-4xl mt-5">プレイスタイル</p>
-                                        <p className="text-left font-black text-4xl mt-5">:{data.stance}</p>
-                                        {/* <p className="text-left font-black text-4xl mt-5">時間帯</p> */}
-                                        <p className="text-left font-black text-4xl mt-5">コメント</p>
-                                        <p>:ゲームしてる時間やキャラを書こう！
-                                    </p>
-
+                                    <div className="mx-3 mt-5">
+                                        {auth.user.image_path !== null ? (
+                                            <div>
+                                                <img
+                                                    className="h-48 w-48 my-0 mx-auto rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                    src={auth.user.image_path}
+                                                />
+                                            </div>
+                                        ) : (
+                                            <div>
+                                                <img
+                                                    className="rounded-full border-2 aspect-square h-48 w-48"
+                                                    src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
+                                                />
+                                            </div>
+                                        )}
                                     </div>
-                                    <form onSubmit={handleSendData}>
+                                   
+                                    
+                                    <form onSubmit={handleSendData} className="w-1/3 ml-40">
+                                        <div>
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">{auth.user.name}</p>
+                                            <input className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-5 text-center pt-5 font-black text-xl" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
+                                        </div>
 
-                                        <input className="ml-5" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
+                                        <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">ランク</p>
+                                        <div className="mt-1 mx-auto flex">
+
+                                            <div>
+                                                <select className="mt-0 block bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-7 pl-5 text-center pt-5 font-black text-xl" value={data.rank} onChange={(e) => setData("rank", e.target.value)}>
+                                                    <option default>ランク選択</option>
+                                                    <option value="アイアン">アイアン</option>
+                                                    <option value="ブロンズ">ブロンズ</option>
+                                                    <option value="シルバー">シルバー</option>
+                                                    <option value="ゴールド">ゴールド</option>
+                                                    <option value="プラチナ">プラチナ</option>
+                                                    <option value="ダイヤモンド">ダイヤ</option>
+                                                    <option value="アセンダント">アセンダント</option>
+                                                    <option value="イモータル">イモータル</option>
+                                                    <option value="レディアント">レディアント</option>
+
+                                                </select>
+                                            </div>
 
 
-                                        <br />
-                                        <div className="mt-5 ml-5">
-                                            <select onChange={(e) => setData("rank", e.target.value)}>
-                                                <option default>ランク選択</option>
-                                                <option value="アイアン">アイアン</option>
-                                                <option value="ブロンズ">ブロンズ</option>
-                                                <option value="シルバー">シルバー</option>
-                                                <option value="ゴールド">ゴールド</option>
-                                                <option value="プラチナ">プラチナ</option>
-                                                <option value="ダイヤモンド">ダイヤ</option>
-                                                <option value="アセンダント">アセンダント</option>
-                                                <option value="イモータル">イモータル</option>
-                                                <option value="レディアント">レディアント</option>
-
-                                            </select>
-
-
-
-                                            <select onChange={(e) => setData("number", e.target.value)}>
-                                                <option default>ランク番号</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                            </select>
-
+                                            <div>
+                                                <select className="mt-0 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-8 pl-3 text-center pt-5 font-black text-xl " value={data.number} onChange={(e) => setData("number", e.target.value)}>
+                                                    <option default>ランク番号</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                </select>
+                                            </div>
                                         </div>
 
 
 
-                                        <div className="mt-5 ml-5">
-                                            <select onChange={(e) => setData("role", e.target.value)}>
+                                        <div className="mt-10 ml-0 ">
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">ロール</p>
+                                            <select className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 px-16 text-center pt-5 font-black text-xl" value={data.role} onChange={(e) => setData("role", e.target.value)}>
                                                 <option default>ロール選択</option>
                                                 {roles.map((role) => (
 
@@ -123,8 +133,9 @@ const Index = (props) => {
 
 
 
-                                        <div className="mt-5 ml-5">
-                                            <select onChange={(e) => setData("stance", e.target.value)}>
+                                        <div className="mt-10 ml-0">
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">プレイスタイル</p>
+                                            <select className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 px-12 text-center pt-5 font-black text-xl" value={data.stance} onChange={(e) => setData("stance", e.target.value)}>
                                                 <option default>プレイスタイル選択</option>
                                                 {stances.map((stance) => (
 
@@ -141,16 +152,18 @@ const Index = (props) => {
 
                                         <br />
 
-                                        <div className="mt-5 ml-5">
-                                            <textarea placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+                                        <div className="mb-3 ml-0">
+                                            <p className="mt-0 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">コメント</p>
+                                            <textarea className="mt-1 block w-11/12 h-72 mx-auto bg-white border-4 text-gray-600 border-black rounded-xl pr-3 pl-4 text-left pt-5 font-black text-lg" placeholder="コメント" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
                                         </div>
 
 
 
 
                                         <div>
-                                            <h2 className="text-title-purple1 text-2xl ml-5">プロフィール画像</h2> {/*送信用*/}
-                                            <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />  {/*変更後のプレビューを表示*/}
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">プロフィール画像</p> {/*送信用*/}
+
+                                            <img className="rounded h-48 w-48 my-0 mx-auto bg-white" src={preview} />  {/*変更後のプレビューを表示*/}
                                             <input className="mt-2 mb-4" type="file" onChange={(e) => { setData("image", e.target.files[0]); handleChangeFile(e); }} />
                                             <span className="text-red-600">{props.errors.image}</span>
                                         </div>
@@ -158,7 +171,7 @@ const Index = (props) => {
 
 
                                         <div>
-                                            <button type="submit" className="bg-black text-white p-2 rounded-xl hover:text-red-500 font-black">変更</button>
+                                            <button type="submit" className="ml-40 bg-black text-white p-2 rounded-xl hover:text-red-500 font-black">変更</button>
                                         </div>
 
                                     </form>
