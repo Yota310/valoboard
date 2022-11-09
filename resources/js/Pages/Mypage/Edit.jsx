@@ -78,12 +78,12 @@ const Index = (props) => {
                                     
                                     <form onSubmit={handleSendData} className="w-1/3 ml-40">
                                         <div>
-                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">{auth.user.name}</p>
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">ゲームID</p>
                                             <input className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-5 text-center pt-5 font-black text-xl" type="text" value={data.name} onChange={(e) => setData("name", e.target.value)} />
                                         </div>
 
                                         <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">ランク</p>
-                                        <div className="mt-1 mx-auto flex">
+                                        <div className="mt-1 justify-center flex">
 
                                             <div>
                                                 <select className="mt-0 block bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-7 pl-5 text-center pt-5 font-black text-xl" value={data.rank} onChange={(e) => setData("rank", e.target.value)}>
@@ -103,7 +103,7 @@ const Index = (props) => {
 
 
                                             <div>
-                                                <select className="mt-0 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-8 pl-3 text-center pt-5 font-black text-xl " value={data.number} onChange={(e) => setData("number", e.target.value)}>
+                                                <select className="mt-0 block bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-8 pl-3 text-center pt-5 font-black text-xl " value={data.number} onChange={(e) => setData("number", e.target.value)}>
                                                     <option default>ランク番号</option>
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -163,15 +163,15 @@ const Index = (props) => {
                                         <div>
                                             <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">プロフィール画像</p> {/*送信用*/}
 
-                                            <img className="rounded h-48 w-48 my-0 mx-auto bg-white" src={preview} />  {/*変更後のプレビューを表示*/}
-                                            <input className="mt-2 mb-4" type="file" onChange={(e) => { setData("image", e.target.files[0]); handleChangeFile(e); }} />
+                                            <img className="rounded mt-2 h-48 w-48 my-0 mx-auto bg-white" src={preview} />  {/*変更後のプレビューを表示*/}
+                                            <input className="mt-2 mb-4 ml-28" type="file" onChange={(e) => { setData("image", e.target.files[0]); handleChangeFile(e); }} />
                                             <span className="text-red-600">{props.errors.image}</span>
                                         </div>
 
 
 
                                         <div>
-                                            <button type="submit" className="ml-40 bg-black text-white p-2 rounded-xl hover:text-red-500 font-black">変更</button>
+                                            <button type="submit" className="ml-60 bg-black text-white p-2 rounded-xl hover:text-red-500 font-black">変更</button>
                                         </div>
 
                                     </form>

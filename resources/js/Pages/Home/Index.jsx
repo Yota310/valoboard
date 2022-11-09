@@ -6,8 +6,7 @@ import { Link } from '@inertiajs/inertia-react';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-//import Typography from '@mui/material/Typography';
-//import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+//import FastfoodIcon from '@material-ui/icons/Fastfood';
 
 
 
@@ -38,6 +37,7 @@ const Index = (props) => {
                     <div>
                         <div className="p-7">
                             <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
+                        
 
                             {users.map((user) => (
                                 <div key={user.id} className="mb-8">
