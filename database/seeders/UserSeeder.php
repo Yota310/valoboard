@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => '太郎#0001',
-            'profile' => '今晩',
+            'profile' => 'よく使うキャラはジェットです。デュエリイストの他にはイニシエーターが使えます！　土日はいつでもできるので時間が合う方は一緒にやりましょう！',
             'email'=>'aaa@gmail.com',
             'password'=>Hash::make('aaiiuueeoo'),
             'age'=>10,
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'aisu#0002',
-            'profile' => 'uma',
+            'profile' => 'キャラクターはレイナが得意です！他のロールは苦手です…　火、木、土、日にのんびりカジュアルを回してるので一緒にやりましょう！',
             'email'=>'aaabbb@gmail.com',
             'password'=>Hash::make('aaiiuueeoo2'),
             'age'=>10,
@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'エイムゴリラ#0003',
-            'profile' => 'ジュゲム、ジュゲム、ゴリラの擦り切れ、買い物ついでに営業妨害、風船わり住んでるところに住むゴリラ、あぐらゴリラにブラゴリラポパイポパイポパイのほうれん草',
+            'profile' => 'よくフェニックスを使いますが、なんでも使えるので合わせピックできます！夜中ならいつでもできるので誘ってください！',
             'email'=>'aaabbbccc@gmail.com',
             'password'=>Hash::make('aaiiuueeoo2'),
             'age'=>10,
@@ -76,7 +76,7 @@ class UserSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'エイムゴるラ#0004',
-            'profile' => 'ジュゲム、ジュゲム、ゴリラの擦り切れ、買い物ついでに営業妨害、風船わり住んでるところに住むゴリラ、あぐらゴリラにブラゴリラポパイポパイポパイのほうれん草',
+            'profile' => '初心者です！まだよくわかってないことが多いですがジェットを練習中です！いろいろ教えていただけると嬉しいです！休みの日はいつでもできるのでどんどん誘ってほしいです！',
             'email'=>'aaabbbccc2@gmail.com',
             'password'=>Hash::make('aaiiuueeoo23'),
             'age'=>90,
@@ -87,7 +87,7 @@ class UserSeeder extends Seeder
             'rank_id'=>2,
             'role_id'=>2,
             'time_id'=>2,
-            'stance_id'=>3,
+            'stance_id'=>1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 

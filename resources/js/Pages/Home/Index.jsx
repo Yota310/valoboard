@@ -35,8 +35,8 @@ const Index = (props) => {
                 <Authenticated auth={auth}>
 
                     <div>
-                        <div className="p-7">
-                            <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
+                        <div className="p-3">
+                            <h1 className="text-xl bg-black text-white pl-5 py-1 font-black">新着の評価</h1>
                         
 
                             {users.map((user) => (

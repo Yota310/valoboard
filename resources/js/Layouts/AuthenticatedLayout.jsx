@@ -157,6 +157,62 @@ export default function Authenticated({ auth, header, children }) {
 
                 <div className="w-5/6">{children}</div>
             </main>
+
+            <footer className="bg-black mt-10">
+                <div className="flex">
+                    <div className="pt-9 mr-auto">
+                        <ApplicationLogo className="h-16 ml-16" />
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                 仮タイトル
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                 仮タイトル
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-24">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
+                    </div>
+                </div>
+
+                <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">
+                    Copyright © 2022 azarasi CORPORATION. All Rights Reserved.
+                </p>
+            </footer>
         </div>
     );
 }

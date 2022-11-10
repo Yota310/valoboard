@@ -20,6 +20,7 @@ const Show = (props) => {
         <div className="font-body1">
             { auth.user != null ? (
                 <Authenticated auth={auth}>
+                    <div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">検索結果</div>
                     { users.map((user) => (
                         <div key={user.id} >
                             <div className="flex ml-2 mt-4 rounded-xl shadow-lg shadow-gray-500">
