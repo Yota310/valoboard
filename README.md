@@ -59,6 +59,8 @@ password aaiiuueeoo
 |  stances   |                  ユーザーのゲームのプレイスタイルの情報                   |
 |   morals   |                  ユーザーの他のユーザーからの評価の情報                   |
 
+<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/109267974/201508016-a5dededb-b7e6-4e5a-8d45-df503d33f840.jpg">
+
 ---
 
 ## 環境の立ち上げ方

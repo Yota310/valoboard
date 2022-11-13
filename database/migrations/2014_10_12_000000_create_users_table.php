@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer("age")->nullable();
-            $table->integer('moral')->nullable();
+            $table->integer('moral')->nullable();//モラルテーブルで計算したものを保存する
             $table->string('sns1')->nullable();
             $table->string('sns2')->nullable();
             $table->string('image_path')->nullable();
