@@ -4,7 +4,9 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import NavLink from '@/Components/NavLink';
 import Dropdown from '@/Components/Dropdown';
 import { Link } from '@inertiajs/inertia-react';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faStar} from "@fortawesome/free-regular-svg-icons";
+import {faHouse,faUser,faRightToBracket,faPenToSquare,faCrosshairs} from "@fortawesome/free-solid-svg-icons";
 export default function Guest({ children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -16,25 +18,26 @@ export default function Guest({ children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto text-gray-500" />
-                                </Link>
+                                
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/" active={route().current('dashboard')}>
+                                <FontAwesomeIcon icon={faHouse} className="text-white text-xl mr-2"/>
                                     トップ
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/login" active={route().current('dashboard')}>
+                                <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2"/>
                                     マイページ
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/login" active={route().current('dashboard')}>
+                                <FontAwesomeIcon icon={faRightToBracket} className="text-white text-xl mr-2"/>
                                     ログイン
                             </NavLink>
                             </div>
@@ -42,12 +45,14 @@ export default function Guest({ children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/register" active={route().current('dashboard')}>
+                                <FontAwesomeIcon icon={faPenToSquare} className="text-white text-xl mr-2"/>
                                     新規登録
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/search" active={route().current('dashboard')}>
+                                <FontAwesomeIcon icon={faCrosshairs} className="text-white text-xl mr-2"/>
                                     検索
                             </NavLink>
                             </div>
@@ -158,6 +163,61 @@ export default function Guest({ children }) {
 
                 <div className="w-5/6">{children}</div>
             </main>
+            <footer className="bg-black mt-10">
+                <div className="flex">
+                    <div className="pt-9 mr-auto">
+                        <ApplicationLogo className="h-auto w-36 ml-16" />
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                 HOME
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                 プライバシーポリシー
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                ご利用にあたって
+                            </Link>
+                        </p>
+                    </div>
+
+                    <div>
+                        <p className="pt-11 pr-24">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                FAQ
+                            </Link>
+                        </p>
+                    </div>
+                </div>
+
+                <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">
+                    Copyright © 2022 azarasi CORPORATION. All Rights Reserved.
+                </p>
+            </footer>
         </div>
     );
 }
