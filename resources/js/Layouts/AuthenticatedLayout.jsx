@@ -18,7 +18,7 @@ export default function Authenticated({ auth, header, children }) {
                 <div className=" text-8xl text-center text-red-500 italic rounded-full bg-white font-title">VALO BOARD</div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black pt-2">
                     <div className="flex justify-between h-16">
-                        <div className="flex">
+                        <div className="flex hover:text-red-500">
                             <div className="shrink-0 flex items-center">
                                 
                             </div>
@@ -32,7 +32,7 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={`/mypage/${auth.user.id}`} active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2"/>
+                                <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2 hover:text-red-500"/>
                                     マイページ
                                 </NavLink>
                             </div>

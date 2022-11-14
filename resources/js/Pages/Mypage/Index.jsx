@@ -42,7 +42,7 @@ const Index = (props) => {
 
 
                                 <div className="mb-8 flex">
-                                    <div className="border-black text-left font-black text-3xl ml-5 bg-white border-2 rounded-2xl">
+                                    <div className="w-1/4 border-black text-left font-black text-3xl ml-5 bg-white border-2 rounded-2xl">
                                         <p className="bg-black text-white p-3 rounded-t-xl">{mypage_user.name}</p>
                                         <div className="h-48 w-48 my-0 mt-5 mx-10">
                                             {mypage_user.image_path !== null ? (
@@ -61,11 +61,15 @@ const Index = (props) => {
                                                 </div>
                                             )}
                                         </div>
+                                        <div className="text-center mt-3">
+                                        <p>関連SNS,URL</p>
+                                        <Link className="w-1/2" href={mypage_user.sns1} >リンク（仮）</Link>
+                                        </div>
                                     </div>
 
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
                                         <div className="flex w-">
-                                            {/* <div>neko<img className="rounded-full h-20" src={auth.user.image_path} /></div> */}
+                                           
                                             {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
 
 
