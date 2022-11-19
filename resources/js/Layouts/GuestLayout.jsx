@@ -5,8 +5,8 @@ import NavLink from '@/Components/NavLink';
 import Dropdown from '@/Components/Dropdown';
 import { Link } from '@inertiajs/inertia-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-regular-svg-icons";
-import {faHouse,faUser,faRightToBracket,faPenToSquare,faCrosshairs} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faHouse, faUser, faRightToBracket, faPenToSquare, faCrosshairs } from "@fortawesome/free-solid-svg-icons";
 export default function Guest({ children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -18,26 +18,26 @@ export default function Guest({ children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
-                                
+
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faHouse} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faHouse} className="text-white text-xl mr-2" />
                                     トップ
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/login" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2" />
                                     マイページ
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/login" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faRightToBracket} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faRightToBracket} className="text-white text-xl mr-2" />
                                     ログイン
                             </NavLink>
                             </div>
@@ -45,14 +45,14 @@ export default function Guest({ children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/register" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faPenToSquare} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faPenToSquare} className="text-white text-xl mr-2" />
                                     新規登録
                             </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/search" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faCrosshairs} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faCrosshairs} className="text-white text-xl mr-2" />
                                     検索
                             </NavLink>
                             </div>
@@ -150,7 +150,7 @@ export default function Guest({ children }) {
             </header>
         )} */}
 
-            <main className="flex max-w-full justify-around">
+            <main className="flex max-w-full h-full justify-around mb-0">
                 <div className="w-1/6 bg-black text-white">
                     <p className="pt-6 pb-1 px-6">初心者🔰</p>
                     <p className="px-6 py-1">アンレ✨４以上</p>
@@ -175,7 +175,7 @@ export default function Guest({ children }) {
                                 href="/"
                                 className="no-underline text-3xl text-white hover:text-red-500"
                             >
-                                 HOME
+                                HOME
                             </Link>
                         </p>
                     </div>
@@ -186,7 +186,7 @@ export default function Guest({ children }) {
                                 href="/description"
                                 className="no-underline text-3xl text-white hover:text-red-500"
                             >
-                                 プライバシーポリシー
+                                プライバシーポリシー
                             </Link>
                         </p>
                     </div>

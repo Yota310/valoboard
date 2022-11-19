@@ -151,7 +151,7 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )} */}
 
-            <main className="flex max-w-full justify-around">
+            <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
                     <p className="pt-6 pb-1 px-6">初心者🔰</p>
