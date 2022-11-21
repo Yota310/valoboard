@@ -150,15 +150,22 @@ export default function Guest({ children }) {
             </header>
         )} */}
 
-            <main className="flex max-w-full h-full justify-around mb-0">
+<main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
-                    <p className="pt-6 pb-1 px-6">初心者🔰</p>
-                    <p className="px-6 py-1">アンレ✨４以上</p>
-                    <p className="px-6 py-1">コンペ✨４以上</p>
-                    <p className="px-6 py-1">アンレ✨２以下</p>
-                    <p className="px-6 py-1">コンペ✨２以下</p>
-                    <p className="px-6 py-1">サイドバー（仮）</p>
-                    <p className="px-6 py-1"></p>
+
+                    <p className="mt-3"><Link className="w-1/6 text-white no-underline pb-1 px-6 hover:text-red-500">初心者🔰</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨４以上</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで✨４以上</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨２以下</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで✨２以下</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">サイドバー 仮</Link></p>
+
+                    <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>
 
                 <div className="w-5/6">{children}</div>

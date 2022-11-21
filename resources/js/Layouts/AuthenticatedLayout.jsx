@@ -5,8 +5,8 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faStar} from "@fortawesome/free-regular-svg-icons";
-import {faHouse,faUser,faRightToBracket,faPenToSquare,faCrosshairs} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { faHouse, faUser, faRightToBracket, faPenToSquare, faCrosshairs } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Authenticated({ auth, header, children }) {
@@ -20,40 +20,40 @@ export default function Authenticated({ auth, header, children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex hover:text-red-500">
                             <div className="shrink-0 flex items-center">
-                                
+
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                           
+
                                 <NavLink href="/" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faHouse} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faHouse} className="text-white text-xl mr-2" />
                                     トップ
                                 </NavLink>
                             </div>
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={`/mypage/${auth.user.id}`} active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2 hover:text-red-500"/>
+                                    <FontAwesomeIcon icon={faUser} className="text-white text-xl mr-2 hover:text-red-500" />
                                     マイページ
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/login" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faRightToBracket} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faRightToBracket} className="text-white text-xl mr-2" />
                                     ログイン
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/register" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faPenToSquare} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faPenToSquare} className="text-white text-xl mr-2" />
                                     新規登録
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href="/search" active={route().current('dashboard')}>
-                                <FontAwesomeIcon icon={faCrosshairs} className="text-white text-xl mr-2"/>
+                                    <FontAwesomeIcon icon={faCrosshairs} className="text-white text-xl mr-2" />
                                     検索
                                 </NavLink>
                             </div>
@@ -154,13 +154,19 @@ export default function Authenticated({ auth, header, children }) {
             <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
-                    <p className="pt-6 pb-1 px-6">初心者🔰</p>
-                    <p className="px-6 py-1">アンレ✨４以上</p>
-                    <p className="px-6 py-1">コンペ✨４以上</p>
-                    <p className="px-6 py-1">アンレ✨２以下</p>
-                    <p className="px-6 py-1">コンペ✨２以下</p>
-                    <p className="px-6 py-1">サイドバー（仮）</p>
-                    <p className="px-6 py-1"></p>
+                    <p><Link className="w-1/6 text-white no-underline  pb-1 px-6 hover:text-red-500">初心者🔰</Link></p>
+
+                    <p><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">アンレ✨４以上</Link></p>
+
+                    <p><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">コンペ✨４以上</Link></p>
+
+                    <p><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">アンレ✨２以下</Link></p>
+
+                    <p><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">コンペ✨２以下</Link></p>
+
+                    <p><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">サイドバー 仮</Link></p>
+
+                    <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>
 
                 <div className="w-5/6">{children}</div>
@@ -178,7 +184,7 @@ export default function Authenticated({ auth, header, children }) {
                                 href="/"
                                 className="no-underline text-3xl text-white hover:text-red-500"
                             >
-                                 HOME
+                                HOME
                             </Link>
                         </p>
                     </div>
@@ -189,7 +195,7 @@ export default function Authenticated({ auth, header, children }) {
                                 href="/description"
                                 className="no-underline text-3xl text-white hover:text-red-500"
                             >
-                                 プライバシーポリシー
+                                プライバシーポリシー
                             </Link>
                         </p>
                     </div>
