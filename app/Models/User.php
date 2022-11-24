@@ -28,8 +28,8 @@ class User extends Authenticatable
         'profile',
         'moral',
         'role_id',
-        
-        
+
+
     ];
     /**
      * The attributes that should be hidden for serialization.
@@ -73,6 +73,12 @@ class User extends Authenticatable
     public function Moral()
     {
         return $this->hasMany(Moral::class);
+    }
+
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
     }
 
     // public function searchUser($word)

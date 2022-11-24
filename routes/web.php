@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\MoralController;
+use App\Http\Controllers\ChatController;
 
 
 /*
@@ -31,28 +32,34 @@ use App\Http\Controllers\MoralController;
 // });
 
 
-Route::controller(HomeController::class)->group(function(){
+Route::controller(HomeController::class)->group(function () {
     Route::get("/", "index");
     Route::get("/register", "register");
 });
 
-Route::controller(MypageController::class)->middleware('auth')->group(function(){
-    Route::get("/mypage/{user}/edit","edit");
-    Route::post("/mypage/{user}/update","update");
-    Route::get("/mypage/{user}/evaluation","evaluation");
+Route::group(['middleware' => ['auth']], function(){
+    Route::inertia('/chat', "Chats/Chats")->name('chat.index');
+    Route::get('/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetch');
+    Route::post('/messages', [ChatController::class, 'sendMessage'])->name('chat.store');
 });
 
-Route::controller(MypageController::class)->group(function(){
-Route::get("/mypage/{user}","index");
+Route::controller(MypageController::class)->middleware('auth')->group(function () {
+    Route::get("/mypage/{user}/edit", "edit");
+    Route::post("/mypage/{user}/update", "update");
+    Route::get("/mypage/{user}/evaluation", "evaluation");
+});
+
+Route::controller(MypageController::class)->group(function () {
+    Route::get("/mypage/{user}", "index");
 });
 
 
-Route::controller(SearchController::class)->group(function(){
+Route::controller(SearchController::class)->group(function () {
     Route::get("/search", "index");
     Route::get("/result", "show");
 });
 
-Route::controller(MoralController::class)->middleware('auth')->group(function(){
+Route::controller(MoralController::class)->middleware('auth')->group(function () {
     Route::post("/store/{user}", "store");
 });
 
@@ -80,20 +87,7 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get("/posts/create", [PostController::class, "create"]);
-
-Route::get("/posts/{post}", [PostController::class, "show"]);
-
-Route::get('/posts/{post}/edit', [PostController::class, "edit"]);
-
-Route::put('/posts/{post}', [PostController::class, "update"]);
-
-Route::post("/posts", [PostController::class, "store"]);
-
-Route::delete("/posts/{post}", [PostController::class, "delete"]);
 
 
-Route::get("/", [HomeController::class, "index"]);
-Route::get("/home", [PostController::class, "index"]);
 
 require __DIR__ . '/auth.php';
