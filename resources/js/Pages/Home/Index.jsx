@@ -26,7 +26,6 @@ const Index = (props) => {
 
 
 
-
     return (
         <div className="font-body1">
             {auth.user != null ? (
