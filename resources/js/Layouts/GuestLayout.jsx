@@ -170,7 +170,8 @@ export default function Guest({ children }) {
 
                 <div className="w-5/6">{children}</div>
             </main>
-            <footer className="bg-black mt-10">
+            <div>
+            <footer className="bg-black pb-0 mb-0 bottom-0 mt-3 w-full">
                 <div className="flex">
                     <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-auto w-36 ml-16" />
@@ -225,6 +226,7 @@ export default function Guest({ children }) {
                     Copyright © 2022 azarasi CORPORATION. All Rights Reserved.
                 </p>
             </footer>
+            </div>
         </div>
     );
 }
