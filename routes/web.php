@@ -31,18 +31,21 @@ use App\Http\Controllers\ChatController;
 //     ]);
 // });
 
-
+//ホーム
 Route::controller(HomeController::class)->group(function () {
-    Route::get("/", "index");
+Route::get("/", "index");
     Route::get("/register", "register");
+ Route::get("/stars","stars");
 });
 
+//チャット機能
 Route::group(['middleware' => ['auth']], function(){
     Route::inertia('/chat', "Chats/Chats")->name('chat.index');
     Route::get('/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetch');
     Route::post('/messages', [ChatController::class, 'sendMessage'])->name('chat.store');
 });
 
+//マイページ
 Route::controller(MypageController::class)->middleware('auth')->group(function () {
     Route::get("/mypage/{user}/edit", "edit");
     Route::post("/mypage/{user}/update", "update");
@@ -53,12 +56,12 @@ Route::controller(MypageController::class)->group(function () {
     Route::get("/mypage/{user}", "index");
 });
 
-
+//検索
 Route::controller(SearchController::class)->group(function () {
     Route::get("/search", "index");
     Route::get("/result", "show");
 });
-
+//モラル
 Route::controller(MoralController::class)->middleware('auth')->group(function () {
     Route::post("/store/{user}", "store");
 });

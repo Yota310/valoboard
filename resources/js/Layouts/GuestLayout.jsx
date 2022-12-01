@@ -155,7 +155,7 @@ export default function Guest({ children }) {
 
                     <p className="mt-3"><Link className="w-1/6 text-white no-underline pb-1 px-6 hover:text-red-500">初心者🔰</Link></p>
 
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨４以上</Link></p>
+                    <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨４以上</Link></p>
 
                     <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで✨４以上</Link></p>
 
