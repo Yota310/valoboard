@@ -154,7 +154,7 @@ export default function Authenticated({ auth, header, children }) {
             <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
-                    <p className="mt-5 pt-3　text-white no-underline  pb-1 px-6">民度✨でしぼる</p>
+                    <p className="mt-5 pt-3　text-white no-underline px-6">民度✨でしぼる</p>
 
                     <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨４以上</Link></p>
 
