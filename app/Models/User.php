@@ -28,6 +28,8 @@ class User extends Authenticatable
         'profile',
         'moral',
         'role_id',
+        'sns_name',
+        'sns_url',
 
 
     ];

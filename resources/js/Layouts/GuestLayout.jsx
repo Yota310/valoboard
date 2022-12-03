@@ -153,17 +153,21 @@ export default function Guest({ children }) {
             <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
-                    <p className="mt-5 pt-3　text-white no-underline px-6">民度でしぼる✨</p>
 
-                    <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨４以上</Link></p>
+<p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
+<p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p>
 
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで✨４以上</Link></p>
+                    {/* <p className="mt-5 pt-3　text-white no-underline px-6">民度<span className="text-yellow-400">★</span>でしぼる</p>
 
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく✨２以下</Link></p>
+                    <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>４以上</Link></p>
 
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで✨２以下</Link></p>
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>４以上</Link></p>
 
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">サイドバー 仮</Link></p>
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>２以下</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>２以下</Link></p>
+
+                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ランダム<span className="text-yellow-400">★</span></Link></p> */}
 
                     <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>

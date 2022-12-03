@@ -34,13 +34,17 @@ class MypageController extends Controller
 
     public function update(Request $request, User $user, Rank $rank)
     {
+        //dd($request);
         $form = $request->all(); //リクエストの全ての情報を$formに入れる
 
         $rank_name = $request->input('rank'); //リクエストからランク名だけ取り出す
         $rank_number = $request->input('number'); //番号だけ取り出す
+        $sns1 = $request->input('sns_url');
+        $sns2 = $request->input('sns_name');
         $image = $request->file('image');
         $user->fill($form); //保存したい情報か確認
-        //dd($image);
+        //dd($user);
+
 
         $new_rank = $rank->where('name', $rank_name)->where('number', $rank_number)->first(['id']); //ランク名と番号から絞り込む
         $user->rank_id = $new_rank->id; //ユーザーのrank_idを変更

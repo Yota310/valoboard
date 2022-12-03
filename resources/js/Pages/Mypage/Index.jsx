@@ -36,7 +36,7 @@ const Index = (props) => {
                 auth.user.id == mypage_user.id ? (
                     <Authenticated auth={auth}>
 
-<div>
+                        <div>
                             <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">マイページ</h1>
                             <div className="p-7">
 
@@ -62,14 +62,14 @@ const Index = (props) => {
                                             )}
                                         </div>
                                         <div className="text-center mt-3">
-                                        <p>関連SNS,URL</p>
-                                        <Link className="w-1/2" href={mypage_user.sns1} >リンク（仮）</Link>
+                                            <p>関連SNS</p>
+                                            <p><a className="w-1/2 text-black hover:text-red-500" target="_blank" href={mypage_user.sns_url}>{mypage_user.sns_name}</a></p>
                                         </div>
                                     </div>
 
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
-                                        <div className="flex w-">
-                                           
+                                        <div className="flex">
+
                                             {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
 
 
@@ -112,11 +112,11 @@ const Index = (props) => {
 
 
                                 </div>
-                               <div className="ml-96 pl-96">
-                                <Link className="ml-20 bg-black p-4 pt-4 rounded-xl no-underline text-white text-xl hover:text-red-500 font-black" href={`/mypage/${mypage_user.id}/edit`}>
+                                <div className="ml-96 pl-96">
+                                    <Link className="ml-20 bg-black p-4 pt-4 rounded-xl no-underline text-white text-xl hover:text-red-500 font-black" href={`/mypage/${mypage_user.id}/edit`}>
                                         編集
                                     </Link>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </Authenticated>
@@ -130,8 +130,9 @@ const Index = (props) => {
 
 
                                 <div className="mb-8 flex">
-                                    <div className="border-black text-left font-black text-3xl ml-5 rounded-l-xl">{mypage_user.name}
-                                        <div className="h-48 w-48 my-0 mx-auto mt-5">
+                                <div className="w-1/4 border-black text-left font-black text-3xl ml-5 bg-white border-2 rounded-2xl">
+                                        <p className="bg-black text-white p-3 rounded-t-xl">{mypage_user.name}</p>
+                                        <div className="h-48 w-48 my-0 mt-5 mx-10">
                                             {mypage_user.image_path !== null ? (
                                                 <div>
                                                     <img
@@ -147,6 +148,10 @@ const Index = (props) => {
                                                     />
                                                 </div>
                                             )}
+                                        </div>
+                                        <div className="text-center mt-3">
+                                            <p>関連SNS</p>
+                                            <p><a className="w-1/2 text-black hover:text-red-500" target="_blank" href={mypage_user.sns_url}>{mypage_user.sns_name}</a></p>
                                         </div>
                                     </div>
 
@@ -214,25 +219,30 @@ const Index = (props) => {
 
 
                             <div className="mb-8 flex">
-                                <div className="border-black text-left font-black text-3xl ml-5 rounded-l-xl">{mypage_user.name}
-                                    <div className="h-48 w-48 my-0 mx-auto mt-5">
-                                        {mypage_user.image_path !== null ? (
-                                            <div>
-                                                <img
-                                                    className="h-48 w-48 my-0 mx-auto rounded-full aspect-square object-cover border-2 border-gray-300"
-                                                    src={mypage_user.image_path}
-                                                />
-                                            </div>
-                                        ) : (
-                                            <div>
-                                                <img
-                                                    className="rounded-full border-2 aspect-square h-48 w-48"
-                                                    src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
-                                                />
-                                            </div>
-                                        )}
+                            <div className="w-1/4 border-black text-left font-black text-3xl ml-5 bg-white border-2 rounded-2xl">
+                                        <p className="bg-black text-white p-3 rounded-t-xl">{mypage_user.name}</p>
+                                        <div className="h-48 w-48 my-0 mt-5 mx-10">
+                                            {mypage_user.image_path !== null ? (
+                                                <div>
+                                                    <img
+                                                        className="h-48 w-48 my-0 mx-auto rounded-full aspect-square object-cover border-2 border-gray-300"
+                                                        src={mypage_user.image_path}
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    <img
+                                                        className="rounded-full border-2 aspect-square h-48 w-48"
+                                                        src="https://valoboard.s3.ap-northeast-1.amazonaws.com/dummy/dami-.png"
+                                                    />
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="text-center mt-3">
+                                            <p>関連SNS</p>
+                                            <p><a className="w-1/2 text-black hover:text-red-500" target="_blank" href={mypage_user.sns_url}>{mypage_user.sns_name}</a></p>
+                                        </div>
                                     </div>
-                                </div>
 
                                 <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
                                     <div className="flex w-">

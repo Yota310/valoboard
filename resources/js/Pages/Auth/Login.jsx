@@ -114,6 +114,8 @@ export default function Login({ status, canResetPassword }) {
                                 新規登録はこちら！
                             </Link>
                 </form>
+
+                <p className="font-black text-red-500 ml-3">テストアカウント　<br/>メールアドレス：aaa@gmail.com　<br/>パスワードaaiiuueeoo</p>
             </GuestLayout>
         </div>
     );

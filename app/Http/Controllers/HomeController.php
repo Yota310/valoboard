@@ -15,9 +15,11 @@ class HomeController extends Controller
         return Inertia::render("Home/Index", ["users" => $users]);
     }
 
-    public function stars()
+    public function stars($number,$stance)
     {
-        $users = User::with(['rank', 'role', 'stance', 'time'])->where('moral', '>=', 4)->where('stance_id', '=', 2)->get();
+        
+        $users = User::with(['rank', 'role', 'stance', 'time'])->where('moral', '>=', $number)->where('stance_id', '=', $stance)->get();
+       
         return Inertia::render("Home/Index", ["users" => $users]);
     }
 

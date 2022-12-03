@@ -24,6 +24,9 @@ const Index = (props) => {
         role: mypage_user.role.id,
         stance: mypage_user.stance.id,
         profile: mypage_user.profile,
+        sns_url: mypage_user.sns_url,
+        sns_name: mypage_user.sns_name,
+        
         //time:mypage_user.time.day,
 
     })
@@ -149,6 +152,19 @@ const Index = (props) => {
                                         </div>
                                         <br />
 
+                                        <div className="mt-10 ml-0">
+                                            <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">SNS</p>
+                                            <select className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 px-28 text-center pt-5 font-black text-xl" value={data.sns_name} onChange={(e) => setData("sns_name", e.target.value)}>
+                                                <option default>SNS選択</option>
+                                                <option value="Twitter">Twitter</option>
+                                                <option value="Instagram">Instagram</option>
+                                                <option value="Discord">Discord</option>
+                                                <option value="その他">その他</option>
+                                               
+                                            </select>
+                                            <input className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-5 text-center pt-5 font-black text-xl" type="text" value={data.sns_url} onChange={(e) => setData("sns_url", e.target.value)} />
+                                        </div>
+                                        <br />
 
                                         <br />
 
