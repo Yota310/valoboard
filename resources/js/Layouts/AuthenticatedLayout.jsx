@@ -172,7 +172,7 @@ export default function Authenticated({ auth, header, children }) {
                 <div className="w-5/6">{children}</div>
             </main>
 
-            <footer className="bg-black mt-10 w-full">
+            <footer className="bg-black mt-10 w-full sticky">
                 <div className="flex">
                     <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-auto w-36 ml-16" />

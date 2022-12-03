@@ -33,13 +33,13 @@ use App\Http\Controllers\ChatController;
 
 //ホーム
 Route::controller(HomeController::class)->group(function () {
-Route::get("/", "index");
+    Route::get("/", "index");
     Route::get("/register", "register");
- Route::get("/stars","stars");
+    Route::get("/stars", "stars");
 });
 
 //チャット機能
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth']], function () {
     Route::inertia('/chat', "Chats/Chats")->name('chat.index');
     Route::get('/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetch');
     Route::post('/messages', [ChatController::class, 'sendMessage'])->name('chat.store');

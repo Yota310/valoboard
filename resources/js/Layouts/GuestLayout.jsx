@@ -150,7 +150,7 @@ export default function Guest({ children }) {
             </header>
         )} */}
 
-<main className="flex max-w-full h-full justify-around">
+            <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
                     <p className="mt-5 pt-3　text-white no-underline px-6">民度でしぼる✨</p>
@@ -171,61 +171,61 @@ export default function Guest({ children }) {
                 <div className="w-5/6">{children}</div>
             </main>
             <div>
-            <footer className="bg-black pb-0 mb-0 bottom-0 mt-3 w-full">
-                <div className="flex">
-                    <div className="pt-9 mr-auto">
-                        <ApplicationLogo className="h-auto w-36 ml-16" />
-                    </div>
+                <footer className="bg-black pb-0 mb-0 bottom-0 mt-3 w-full">
+                    <div className="flex">
+                        <div className="pt-9 mr-auto">
+                            <ApplicationLogo className="h-auto w-36 ml-16" />
+                        </div>
 
-                    <div>
-                        <p className="pt-11 pr-7">
-                            <Link
-                                href="/"
-                                className="no-underline text-3xl text-white hover:text-red-500"
-                            >
-                                HOME
+                        <div>
+                            <p className="pt-11 pr-7">
+                                <Link
+                                    href="/"
+                                    className="no-underline text-3xl text-white hover:text-red-500"
+                                >
+                                    HOME
                             </Link>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
 
-                    <div>
-                        <p className="pt-11 pr-7">
-                            <Link
-                                href="/description"
-                                className="no-underline text-3xl text-white hover:text-red-500"
-                            >
-                                プライバシーポリシー
+                        <div>
+                            <p className="pt-11 pr-7">
+                                <Link
+                                    href="/description"
+                                    className="no-underline text-3xl text-white hover:text-red-500"
+                                >
+                                    プライバシーポリシー
                             </Link>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
 
-                    <div>
-                        <p className="pt-11 pr-7">
-                            <Link
-                                href="/description"
-                                className="no-underline text-3xl text-white hover:text-red-500"
-                            >
-                                ご利用にあたって
+                        <div>
+                            <p className="pt-11 pr-7">
+                                <Link
+                                    href="/description"
+                                    className="no-underline text-3xl text-white hover:text-red-500"
+                                >
+                                    ご利用にあたって
                             </Link>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
 
-                    <div>
-                        <p className="pt-11 pr-24">
-                            <Link
-                                href="/description"
-                                className="no-underline text-3xl text-white hover:text-red-500"
-                            >
-                                FAQ
+                        <div>
+                            <p className="pt-11 pr-24">
+                                <Link
+                                    href="/description"
+                                    className="no-underline text-3xl text-white hover:text-red-500"
+                                >
+                                    FAQ
                             </Link>
-                        </p>
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">
-                    Copyright © 2022 azarasi CORPORATION. All Rights Reserved.
+                    <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">
+                        Copyright © 2022 azarasi CORPORATION. All Rights Reserved.
                 </p>
-            </footer>
+                </footer>
             </div>
         </div>
     );

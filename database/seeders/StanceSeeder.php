@@ -17,31 +17,31 @@ class StanceSeeder extends Seeder
     public function run()
     {
         DB::table('stances')->insert([
-            'name'=>"未設定",
+            'name' => "未設定",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('stances')->insert([
-            'name'=>"ゆるく",
+            'name' => "ゆるく",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
         ]);
 
         DB::table('stances')->insert([
-            'name'=>"ガチで",
+            'name' => "ガチで",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
-        ]); 
+        ]);
 
         DB::table('stances')->insert([
-            'name'=>"初心者",
+            'name' => "初心者",
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
 
-        ]); 
+        ]);
     }
 }
