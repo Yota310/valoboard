@@ -26,7 +26,7 @@ const Index = (props) => {
         profile: mypage_user.profile,
         sns_url: mypage_user.sns_url,
         sns_name: mypage_user.sns_name,
-        
+
         //time:mypage_user.time.day,
 
     })
@@ -77,8 +77,8 @@ const Index = (props) => {
                                             </div>
                                         )}
                                     </div>
-                                   
-                                    
+
+
                                     <form onSubmit={handleSendData} className="w-1/3 ml-40">
                                         <div>
                                             <p className="mt-10 block mx-auto bg-black border-4 text-white text-2xl border-black rounded-xl p-2 pr-5 text-center pt-5 font-black">ゲームID</p>
@@ -160,7 +160,7 @@ const Index = (props) => {
                                                 <option value="Instagram">Instagram</option>
                                                 <option value="Discord">Discord</option>
                                                 <option value="その他">その他</option>
-                                               
+
                                             </select>
                                             <input className="mt-1 block mx-auto bg-white border-4 text-gray-600 border-black rounded-xl p-2 pr-5 text-center pt-5 font-black text-xl" type="text" value={data.sns_url} onChange={(e) => setData("sns_url", e.target.value)} />
                                         </div>
