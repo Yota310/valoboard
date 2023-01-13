@@ -10,9 +10,10 @@ return(
                         <div className="p-3">
                             <h1 className="text-xl text-white bg-black pl-5 py-1 font-black">新着の評価</h1>
                         
-                            {console.log("user",this.props.user)}
-                            {console.log("auth",this.props.auth)}
-                            {this.props.user.map((user) => (
+                            {/* {console.log("user",this.props.users)}
+                            {console.log("auth",this.props.auth)} */}
+                            
+                            {this.props.users.map((user) => (
                                 <div key={user.id} className="mb-8">
                                     <div className="flex rounded-xl shadow-lg mt-3 shadow-gray-500">
                                         <div className="py-3 pl-3  bg-white border-4 border-black text-center pt-5 font-black text-3xl rounded-l-xl w-1/3">
