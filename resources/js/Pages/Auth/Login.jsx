@@ -39,7 +39,7 @@ export default function Login({ status, canResetPassword }) {
 
                 <form className="text-center mt-10 mb-5" onSubmit={submit}>
                     <div>
-                        <InputLabel forInput="email" value="メールアドレス" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto"/>
+                        <InputLabel forInput="email" value="メールアドレス" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto" />
 
                         <TextInput
                             type="text"
@@ -56,7 +56,7 @@ export default function Login({ status, canResetPassword }) {
                     </div>
 
                     <div className="mt-10">
-                        <InputLabel forInput="password" value="パスワード" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto"/>
+                        <InputLabel forInput="password" value="パスワード" className="mb-4 p-2 font-black text-xl rounded-2xl text-white leading-normal　mt-5 bg-black w-1/4 ml-auto mr-auto" />
 
                         <TextInput
                             type="password"
@@ -72,7 +72,7 @@ export default function Login({ status, canResetPassword }) {
 
                     <div className="block mt-4">
                         <label>
-                            <Checkbox name="remember" value={data.remember} handleChange="{onHandleChange}"/>
+                            <Checkbox name="remember" value={data.remember} handleChange="{onHandleChange}" />
 
                             <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶しますか？</span>
                         </label>
@@ -103,19 +103,19 @@ export default function Login({ status, canResetPassword }) {
                                 パスワードをお忘れですか？？
                             </Link>
 
-                            
+
                         )}
-                        
+
                     </div>
                     <Link
-                                href={route('register')}
-                                className="underline text-sm text-gray-600 hover:text-red-500"
-                            >
-                                新規登録はこちら！
+                        href={route('register')}
+                        className="underline text-sm text-gray-600 hover:text-red-500"
+                    >
+                        新規登録はこちら！
                             </Link>
                 </form>
 
-                <p className="font-black text-red-500 ml-3">テストアカウント　<br/>メールアドレス：aaa@gmail.com　<br/>パスワードaaiiuueeoo</p>
+                <p className="font-black text-red-500 ml-3">テストアカウント　<br />メールアドレス：aaa@gmail.com　<br />パスワードaaiiuueeoo</p>
             </GuestLayout>
         </div>
     );

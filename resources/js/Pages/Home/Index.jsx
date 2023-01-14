@@ -37,15 +37,15 @@ const Index = (props) => {
                     <Profile
                         users={users}
                         auth={auth}
-                      />
+                    />
 
                 </Authenticated>
             ) : (
 
 
                 <Guest>
-                    <Profile users={users}/>
-                   
+                    <Profile users={users} />
+
                 </Guest>
             )}
         </div>
