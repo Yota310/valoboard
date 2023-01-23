@@ -157,17 +157,7 @@ export default function Guest({ children }) {
 <p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
 <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p>
 
-                    {/* <p className="mt-5 pt-3　text-white no-underline px-6">民度<span className="text-yellow-400">★</span>でしぼる</p>
-
-                    <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>４以上</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>４以上</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>２以下</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>２以下</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ランダム<span className="text-yellow-400">★</span></Link></p> */}
+                    
 
                     <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>
@@ -212,18 +202,24 @@ export default function Guest({ children }) {
                                     ご利用にあたって
                             </Link>
                             </p>
-                        </div>
-
-                        <div>
-                            <p className="pt-11 pr-24">
-                                <Link
-                                    href="/description"
-                                    className="no-underline text-3xl text-white hover:text-red-500"
-                                >
-                                    FAQ
+                            </div>
+                            <div>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-white hover:text-red-500"
+                            >
+                                FAQ
                             </Link>
-                            </p>
-                        </div>
+                        </p>                       
+                    </div>
+                   
+                    <div> 
+                    <p className="pt-11 pr-24">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
+                        </a>
+                        </p>
+                    </div>
                     </div>
 
                     <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">

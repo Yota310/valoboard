@@ -57,7 +57,7 @@ export default function Authenticated({ auth, header, children }) {
                                     検索
                                 </NavLink>
                             </div>
-
+                           
 
                         </div>
 
@@ -215,13 +215,20 @@ export default function Authenticated({ auth, header, children }) {
                     </div>
 
                     <div>
-                        <p className="pt-11 pr-24">
+                        <p className="pt-11 pr-7">
                             <Link
                                 href="/description"
                                 className="no-underline text-3xl text-white hover:text-red-500"
                             >
                                 FAQ
                             </Link>
+                        </p>                       
+                    </div>
+                   
+                    <div> 
+                    <p className="pt-11 pr-24">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
+                        </a>
                         </p>
                     </div>
                 </div>
