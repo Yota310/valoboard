@@ -5,13 +5,31 @@ import Guest from "@/Layouts/GuestLayout";
 import { Link, useForm } from '@inertiajs/inertia-react';
 import Rating from '@mui/material/Rating';
 import PrimaryButton from '@/Components/PrimaryButton';
-
+import Star from '@/Components/Mypage/Star';
 
 
 
 const Index = (props) => {
     const { mypage_user, auth, moral } = props;
-    console.log("neko", mypage_user.image_path);
+    const { data, setData, post } = useForm({
+        modalState: false
+    })
+    console.log("gorira", data);
+    let modal;
+    const handleModalState = () => {
+        setData("modalState", true);
+        console.log("sousin", data);
+    }
+    if (data.modalState) {
+        modal = (
+            <Star
+                props={props}
+                auth={auth}
+                mypage_user={mypage_user}
+                modalState={setData}
+            />
+        )
+    }
 
 
     const handleDeletePost = (id) => {
@@ -19,16 +37,6 @@ const Index = (props) => {
             onBefore: () => confirm("消し去る覚悟はできてるか？"),
         })
     }
-
-
-
-    const moveToEdit = () => {
-
-    }
-
-
-
-
 
     return (
         <div className="font-body1">
@@ -126,9 +134,8 @@ const Index = (props) => {
 
                         <div>
                             <h1 className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">{mypage_user.name}のマイページ</h1>
+                            {modal}
                             <div className="p-7">
-
-
                                 <div className="mb-8 flex">
                                     <div className="w-1/4 border-black text-left font-black text-3xl ml-5 bg-white border-2 rounded-2xl">
                                         <p className="bg-black text-white p-3 rounded-t-xl">{mypage_user.name}</p>
@@ -183,7 +190,9 @@ const Index = (props) => {
                                                     {/* <Typography component="legend">Read only</Typography> */}
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
 
-                                                    <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>
+                                                    {/* <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link> */}
+
+                                                    <button type="submit" className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5" onClick={handleModalState}>民度を評価</button>
 
 
                                                 </p>
