@@ -130,10 +130,6 @@ export default function Guest({ children }) {
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
-                        {/* <div className="px-4">
-                        <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
-                        <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
-                    </div> */}
 
                         <div className="mt-3 space-y-1">
                             <ResponsiveNavLink method="post" href={route('logout')} as="button">
@@ -144,20 +140,14 @@ export default function Guest({ children }) {
                 </div>
             </nav>
 
-            {/* {header && (
-            <header className="bg-white shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
-            </header>
-        )} */}
-
             <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
 
-<p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
-<p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p>
+                    <p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
+                    {/* <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p> */}
 
-                    
+
 
                     <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>
@@ -202,24 +192,24 @@ export default function Guest({ children }) {
                                     ご利用にあたって
                             </Link>
                             </p>
-                            </div>
-                            <div>
-                        <p className="pt-11 pr-7">
-                            <Link
-                                href="/description"
-                                className="no-underline text-3xl text-white hover:text-red-500"
-                            >
-                                FAQ
+                        </div>
+                        <div>
+                            <p className="pt-11 pr-7">
+                                <Link
+                                    href="/description"
+                                    className="no-underline text-3xl text-white hover:text-red-500"
+                                >
+                                    FAQ
                             </Link>
-                        </p>                       
-                    </div>
-                   
-                    <div> 
-                    <p className="pt-11 pr-24">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
+                            </p>
+                        </div>
+
+                        <div>
+                            <p className="pt-11 pr-24">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
                         </a>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
                     </div>
 
                     <p className="text-center text-2xl mt-5 pb-14 text-white font-zenmaru font-black">

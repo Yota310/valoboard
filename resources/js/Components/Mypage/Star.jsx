@@ -4,7 +4,6 @@ import { Link, useForm } from '@inertiajs/inertia-react';
 
 
 
-// console.log("nekoko", this.props.auth.user.id);
 const Star = (props) => {
     const { mypage_user, auth, moral } = props;
     const { data, setData, post } = useForm({

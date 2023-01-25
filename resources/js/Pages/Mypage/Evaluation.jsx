@@ -8,7 +8,6 @@ import Star from '@/Components/Mypage/Star';
 
 const Evaluation = (props) => {
     const { mypage_user, auth, moral } = props;
-    // console.log("neko", mypage_user.image_path);
     const { data, setData, post } = useForm({
         star: null,
         user_id: auth.user.id,

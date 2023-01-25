@@ -57,7 +57,7 @@ export default function Authenticated({ auth, header, children }) {
                                     検索
                                 </NavLink>
                             </div>
-                           
+
 
                         </div>
 
@@ -145,37 +145,19 @@ export default function Authenticated({ auth, header, children }) {
                 </div>
             </nav>
 
-            {/* {header && (
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
-                </header>
-            )} */}
-
-<main className="flex max-w-full h-full justify-around">
+            <main className="flex max-w-full h-full justify-around">
                 <div className="w-1/6 bg-black text-white">
 
 
-<p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
-<p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p>
-
-                    {/* <p className="mt-5 pt-3　text-white no-underline px-6">民度<span className="text-yellow-400">★</span>でしぼる</p>
-
-                    <p className="mt-3"><Link href="/stars" className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>４以上</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>４以上</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ゆるく<span className="text-yellow-400">★</span>２以下</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ガチで<span className="text-yellow-400">★</span>２以下</Link></p>
-
-                    <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500">ランダム<span className="text-yellow-400">★</span></Link></p> */}
+                    <p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
+                    {/* <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p> */}
 
                     <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
                 </div>
 
                 <div className="w-5/6">{children}</div>
             </main>
-            <footer className="bg-black mt-10 w-full sticky">
+            <footer className="bg-black w-full sticky mb-0">
                 <div className="flex">
                     <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-auto w-36 ml-16" />
@@ -222,12 +204,12 @@ export default function Authenticated({ auth, header, children }) {
                             >
                                 FAQ
                             </Link>
-                        </p>                       
+                        </p>
                     </div>
-                   
-                    <div> 
-                    <p className="pt-11 pr-24">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
+
+                    <div>
+                        <p className="pt-11 pr-24">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLZhuocprmjfpVhKtXX2QJSYnqQKCzv_4JF0oECIiDwjbk5A/viewform?usp=sf_link" target="_blank" className="no-underline text-3xl text-white hover:text-red-500">アンケート
                         </a>
                         </p>
                     </div>
