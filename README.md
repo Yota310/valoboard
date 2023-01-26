@@ -36,7 +36,7 @@ password aaiiuueeoo
 
 #### フロントエンド
 
--   React
+-   React　TailwindCSS
 
 #### バックエンド
 
@@ -46,7 +46,7 @@ password aaiiuueeoo
 
 -   Docker
 -   MySQL
-
+-   S3
 ---
 
 ## データベース
