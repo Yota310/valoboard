@@ -22,14 +22,7 @@ use App\Http\Controllers\ChatController;
 |
 */
 
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
+
 
 //ホーム
 Route::controller(HomeController::class)->group(function () {
@@ -65,26 +58,6 @@ Route::controller(SearchController::class)->group(function () {
 Route::controller(MoralController::class)->middleware('auth')->group(function () {
     Route::post("/store/{user}", "store");
 });
-
-//Route::get("/", [HomeController::class, "index"]);
-
-//Route::get("/mypage/{user}", [MypageController::class, "index"]);
-
-//Route::get("/mypage", [MypageController::class, "index"]);
-
-//Route::get("/mypage/{user}/edit",[MypageController::class,"edit"]);
-
-//Route::post("/mypage/{user}/update",[MypageController::class,"update"]);
-
-//Route::get("/register", [HomeController::class, "register"]);
-
-//Route::get("/search", [SearchController::class, "index"]);
-
-//Route::get("/result", [SearchController::class, "show"]);
-
-//Route::post("/store", [MoralController::class, "store"]);
-
-
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -12,10 +12,10 @@ export default function Register() {
         email: '',
         password: '',
         password_confirmation: '',
-        moral:3,
-        rank_id:1,
-        role_id:1,
-        stance_id:1,
+        moral: 3,
+        rank_id: 1,
+        role_id: 1,
+        stance_id: 1,
     });
 
     useEffect(() => {

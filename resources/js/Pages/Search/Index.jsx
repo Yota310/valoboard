@@ -78,21 +78,6 @@ const Index = (props) => {
 
                         </select>
 
-
-
-                        {/* <select onChange={(e) => setTime(e.target.value)}>
-                            <option default>時間を選択</option>
-                            {times.map((time) => (
-
-                                <option key={time.id} value={time.id}>{time.day}</option>
-                            )
-                            )
-                            }
-
-                        </select> */}
-
-
-
                         <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
@@ -154,19 +139,6 @@ const Index = (props) => {
                             }
 
                         </select>
-
-
-
-                        {/* <select onChange={(e) => setTime(e.target.value)}>
-                            <option default>時間を選択</option>
-                            {times.map((time) => (
-
-                                <option key={time.id} value={time.id}>{time.day}</option>
-                            )
-                            )
-                            }
-
-                        </select> */}
 
 
 

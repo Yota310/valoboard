@@ -21,14 +21,14 @@ class SearchController extends Controller
 
     public function Show(SearchRequest $request, User $user, Rank $rank)
     {
-        //dd($request);
+        
         $word = $request->input('word');
         $rank_name = $request->input('rank');
         $number = $request->input('number');
         $role = $request->input('role');
         $stance = $request->input('stance');
         $time = $request->input('time');
-        //return Inertia::render("Search/Show", ["users" => $user->searchUser($word)]);
+        
 
         //$rank_id= $rank->where('name', 'like' , $rank_name)->where('number','like',$number)->first(['id']);
         //名前、ランク名、ランク番号、ロール、プレイスタイル○
@@ -65,12 +65,6 @@ class SearchController extends Controller
         //ランク名、ロール、プレイスタイル○猫はうごく
         if (isset($rank_name) && isset($role) && isset($stance)) {
             $ne = $rank->where('name', $rank_name)->get();
-            //dd($rank_id);
-
-            //$s[0]=(int) $s_id[0];
-            //$f[0]=(int) $s_id[2];
-            //dd(gettype($s[0]));
-
 
 
             //ここで番号の有無をはんだん
