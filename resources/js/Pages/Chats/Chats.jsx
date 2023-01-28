@@ -12,7 +12,7 @@ export default function Chats({ auth, errors }) {
     // メッセージをバックエンドに送信
     const sendMessage = useCallback(async (message) => {
         await axios.post(route('chat.store'), { message: message });
-        setMessages(prevState => ([ ...prevState, { message: message, user: user }]));
+        setMessages(prevState => ([...prevState, { message: message, user: user }]));
     });
 
     // チャットメッセージを取得する
@@ -23,7 +23,7 @@ export default function Chats({ auth, errors }) {
 
     useEffect(() => {
         getChatMessages();
-    
+
         // 以下を追記
         // ブロードキャスト受信
         window.Echo
