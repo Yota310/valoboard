@@ -29,7 +29,6 @@ return new class extends Migration
             $table->foreignId('role_id')->nullable()->constrained('roles');
             $table->foreignId('time_id')->nullable()->constrained('times');
             $table->foreignId('stance_id')->nullable()->constrained('stances');
-
             $table->rememberToken();
             $table->timestamps();
         });
