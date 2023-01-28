@@ -27,6 +27,7 @@ class HomeController extends Controller
     {
         return Inertia::render("Home/New", ["users" => $user->get()]);
     }
+    
     public function register()
     {
         return Inertia::render("Auth/register");
