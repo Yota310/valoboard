@@ -32,4 +32,9 @@ class HomeController extends Controller
     {
         return Inertia::render("Auth/register");
     }
+
+    public function description()
+    {
+        return Inertia::render("Home/Description");
+    }
 }

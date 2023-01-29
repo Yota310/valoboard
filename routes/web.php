@@ -27,6 +27,7 @@ use App\Http\Controllers\ChatController;
 //ホーム
 Route::controller(HomeController::class)->group(function () {
     Route::get("/", "index");
+    Route::get("/description", "description");
     Route::get("/register", "register");
     Route::get("/stars/{number}/{stance}", "stars");
 });
