@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Message;  // 追記
-use Illuminate\Support\Facades\Auth;  // 追記
+use App\Models\Message;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Events\MessageSent;
 
@@ -23,7 +23,6 @@ public function sendMessage(Request $request)
         'message' => $request['message']
     ]);
 
-    // 追記
     broadcast(new MessageSent($user, $message))->toOthers();
 }
 }

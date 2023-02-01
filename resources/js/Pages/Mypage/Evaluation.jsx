@@ -14,21 +14,6 @@ const Evaluation = (props) => {
         evaluated_user_id: mypage_user.id
     })
 
-    const handleDeletePost = (id) => {
-        Inertia.delete(`/posts/${id}`, {
-            onBefore: () => confirm("消し去る覚悟はできてるか？"),
-        })
-    }
-
-    const handleSendStar = (e) => {
-        e.preventDefault();
-        post(`/store/${mypage_user.id}`);
-    }
-
-    const moveToEdit = () => {
-
-    }
-
     return (
         <div className="font-body1">
             <Authenticated auth={auth}>
