@@ -9,7 +9,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <div className="p-3">
-                    <h1 className="text-xl text-white bg-black pl-5 py-1 font-black">新着の評価</h1>
+                    <h1 className="text-xl text-white bg-black pl-5 py-1 font-black">{this.props.title}</h1>
 
                     {/* {console.log("user",this.props.users)}
                             {console.log("auth",this.props.auth)} */}

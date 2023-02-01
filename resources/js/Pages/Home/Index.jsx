@@ -24,6 +24,7 @@ const Index = (props) => {
 
                 <Authenticated auth={auth}>
                     <Profile
+                        title={"新着の評価"}
                         users={users}
                         auth={auth}
                     />
