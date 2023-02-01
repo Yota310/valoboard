@@ -8,23 +8,12 @@ import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Profile from "@/Components/Page/Profile";
 
-//import FastfoodIcon from '@material-ui/icons/Fastfood';
-
 
 
 const Index = (props) => {
-    const [value, setValue] = React.useState();
 
     const { users, auth } = props;
     console.log("neko", props);
-
-
-    const handleDeletePost = (id) => {
-        Inertia.delete(`/posts/${id}`, {
-            onBefore: () => confirm("消し去る覚悟はできてるか？"),
-        })
-    }
-
 
 
 

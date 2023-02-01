@@ -38,8 +38,6 @@ const Show = (props) => {
                                             '& > legend': { mt: 2 },
                                         }}
                                     >
-
-                                        {/* <Typography component="legend">Read only</Typography> */}
                                         <Rating size="large" name="read-only" value={user.moral} readOnly />
 
 
@@ -76,8 +74,6 @@ const Show = (props) => {
                                             '& > legend': { mt: 2 },
                                         }}
                                     >
-
-                                        {/* <Typography component="legend">Read only</Typography> */}
                                         <Rating size="large" name="read-only" value={user.moral} readOnly />
 
 

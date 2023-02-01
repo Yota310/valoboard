@@ -26,15 +26,11 @@ const Index = (props) => {
         profile: mypage_user.profile,
         sns_url: mypage_user.sns_url,
         sns_name: mypage_user.sns_name,
-
-        //time:mypage_user.time.day,
-
     })
 
     const [preview, setPreview] = useState('');
 
     const handleSendData = (e) => {
-        console.log("ここまで恋");
         e.preventDefault();
         post(`/mypage/${auth.user.id}/update`);
     };

@@ -16,7 +16,7 @@ export default function Dashboard(props) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="overflow-hidden sm:rounded-lg">
                         
-                        <div className="p-3  border-4 text-gray-600 bg-white border-black text-center pt-5 font-black text-3xl rounded-xl w-1/4">ログイン完了！</div>
+                        <div className="p-3  border-4 text-gray-600 Ïbg-white border-black text-center pt-5 font-black text-3xl rounded-xl w-1/4">ログイン完了！</div>
                     </div>
                 </div>
             </div>

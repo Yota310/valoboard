@@ -14,7 +14,6 @@ const Index = (props) => {
     const { data, setData, post } = useForm({
         modalState: false
     })
-    console.log("gorira", data);
     let modal;
     const handleModalState = () => {
         setData("modalState", true);
@@ -29,13 +28,6 @@ const Index = (props) => {
                 modalState={setData}
             />
         )
-    }
-
-
-    const handleDeletePost = (id) => {
-        Inertia.delete(`/posts/${id}`, {
-            onBefore: () => confirm("消し去る覚悟はできてるか？"),
-        })
     }
 
     return (
@@ -99,8 +91,6 @@ const Index = (props) => {
                                                 <p className="text-left font-medium text-3xl mt-5">{mypage_user.stance.name}</p>
 
                                                 <p className="font-black text-4xl mt-5">
-
-                                                    {/* <Typography component="legend">Read only</Typography> */}
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
 
 
@@ -164,7 +154,6 @@ const Index = (props) => {
 
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
                                         <div className="flex w-">
-                                            {/* <div>neko<img className="rounded-full h-20" src={auth.user.image_path} /></div> */}
                                             {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
 
 
@@ -186,12 +175,7 @@ const Index = (props) => {
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
 
                                                 <p className="font-black text-4xl mt-5">
-
-                                                    {/* <Typography component="legend">Read only</Typography> */}
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
-
-                                                    {/* <Link href={`/mypage/${mypage_user.id}/evaluation`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link> */}
-
                                                     <button type="submit" className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5" onClick={handleModalState}>民度を評価</button>
 
 
@@ -277,8 +261,6 @@ const Index = (props) => {
                                             <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>
 
                                             <p className="font-black text-4xl mt-5">
-
-                                                {/* <Typography component="legend">Read only</Typography> */}
                                                 <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
 
                                                 <Link href={`/login`} className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5">民度を評価</Link>

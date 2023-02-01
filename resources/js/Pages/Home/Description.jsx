@@ -6,7 +6,7 @@ import * as React from 'react';
 
 
 
-const Description = (props) => {
+const Description = () => {
 
 
     return (

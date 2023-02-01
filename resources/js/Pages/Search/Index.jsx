@@ -12,14 +12,13 @@ const Index = (props) => {
     const [number, setNumber] = useState(null);
     const [role, setRole] = useState(null);
     const [stance, setStance] = useState(null);
-    const [time, setTime] = useState(null);
-    const { auth, ranks, roles, stances, times } = props;   // Stance $stance, Time $time
+    const { auth, roles, stances} = props;   // Stance $stance, Time $time
 
     console.log("neko", props);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        Inertia.get(`/result`, { word: word, rank: rank, role: role, stance: stance, time: time, number: number, });
+        Inertia.get(`/result`, { word: word, rank: rank, role: role, stance: stance, number: number, });
     };
 
 
