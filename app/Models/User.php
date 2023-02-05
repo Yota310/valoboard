@@ -83,8 +83,4 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
-    // public function searchUser($word)
-    // {
-    //     return User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->get();
-    // }
 }

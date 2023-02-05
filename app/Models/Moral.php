@@ -37,7 +37,6 @@ class Moral extends Model
             $new_moral = intval(round($result)); //.5まで切り捨て
         }
 
-
         $user->fill(['moral' => $new_moral])->save(); //userテーブル内のmoralに上で求めた値をuserテーブルに保存
     }
 }

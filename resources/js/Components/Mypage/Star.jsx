@@ -17,14 +17,11 @@ const Star = (props) => {
         e.preventDefault();
         post(`/store/${mypage_user.id}`);
         modalState("modalState", false);
-        console.log("sousin", data);
     }
 
     const handleModalState = () => {
         modalState("modalState", false);
-        console.log("sousin", data);
     }
-    console.log("modalStar", modalState);
 
     return (
         <div id="overlay">

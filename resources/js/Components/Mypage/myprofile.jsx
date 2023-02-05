@@ -59,7 +59,6 @@ const myprofile = (props) => {
 
                                     <p className="font-black text-4xl mt-5">
 
-                                        {/* <Typography component="legend">Read only</Typography> */}
                                         <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
 
 

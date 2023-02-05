@@ -11,9 +11,6 @@ class Profile extends React.Component {
                 <div className="p-3">
                     <h1 className="text-xl text-white bg-black pl-5 py-1 font-black">{this.props.title}</h1>
 
-                    {/* {console.log("user",this.props.users)}
-                            {console.log("auth",this.props.auth)} */}
-
                     {this.props.users.map((user) => (
                         <Link href={`/mypage/${user.id}`} className="no-underline " >
                             <div key={user.id} className="mb-8 ">
@@ -46,7 +43,7 @@ class Profile extends React.Component {
                                                 {user.name}
                                             </div></div>
 
-                                    </div> {/*  flex */}
+                                    </div>
 
 
                                     <div className="bg-white text-gray-600 border-2 border-r-0 border-black  text-center pt-5 font-black text-3xl p-3 w-1/6">{user.rank.name}{user.rank.number}</div>
@@ -67,7 +64,6 @@ class Profile extends React.Component {
                                             }}
                                         >
 
-                                            {/* <Typography component="legend">Read only</Typography> */}
                                             <Rating size="large" name="read-only" value={user.moral} readOnly />
 
 

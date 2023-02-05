@@ -13,7 +13,6 @@ class MypageController extends Controller
     public function index(User $user, Moral $moral)
     {
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
-        //$rank=User::find($user->id)->rank;
 
         $moral->calculate($user);
         return Inertia::render("Mypage/Index", ["mypage_user" => $mypage_user]);
@@ -22,7 +21,6 @@ class MypageController extends Controller
     public function evaluation(User $user)
     {
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
-        //$rank=User::find($user->id)->rank;
         return Inertia::render("Mypage/Evaluation", ["mypage_user" => $mypage_user]);
     }
 

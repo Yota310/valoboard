@@ -145,8 +145,6 @@ export default function Guest({ children }) {
 
 
                     <p className="mt-3 font-black"><a href="https://tracker.gg/valorant" target="_blank" className="text-white no-underline  pb-1 px-6 mt-3 hover:text-red-500 ">Valorant status</a></p>
-                    {/* <p className="mt-3"><Link className="text-white no-underline  pb-1 px-6 hover:text-red-500 font-black">ランダム検索</Link></p> */}
-
 
 
                     <Link className="text-white no-underline  pb-1 px-6 hover:text-red-500"></Link>
