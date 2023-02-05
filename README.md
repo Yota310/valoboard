@@ -58,9 +58,71 @@ password aaiiuueeoo
 |   roles    |                 ユーザーの得意とするゲーム内の役割の情報                  |
 |  stances   |                  ユーザーのゲームのプレイスタイルの情報                   |
 |   morals   |                  ユーザーの他のユーザーからの評価の情報                   |
+|   likes    |　　　　　　　　　　　ユーザーに対するお気に入りの情報　　　　　　　　　         |
+|   firends  |　　　　　　　　　　　ユーザー友達になっているユーザーの情報　　　　　　　　　    |
+<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/109267974/216833890-6aa24968-0238-4ef0-b5b3-176c5316dfb5.png">
 
-<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/109267974/201508016-a5dededb-b7e6-4e5a-8d45-df503d33f840.jpg">
 
+- VALOBOARD
+```mermaid
+erDiagram
+
+ranks ||--|{ users: ""
+roles ||--|{ users: ""
+stances ||--|{ users: ""
+users ||--|{likes: ""
+users ||--|{friends: ""
+
+  morals {
+    integer star
+    integer user_id
+    integer evaluated_user_id
+  }
+  
+  users {
+    integer id
+    string name
+    string profile
+    string email
+    string password
+    integer age
+    integer moral
+    string sns1
+    string sns2
+    string image_path
+    integer rank_id
+    integer role_id
+    integer stance_id
+  }
+
+  ranks {
+    integer id
+    string name
+    integer number
+  }
+
+  roles {
+    integer id
+    string name
+  }
+
+  stances {
+    integer id
+    string name
+  }
+
+  likes {
+   integer like_id
+   integer liked_id
+  }
+
+  friends {
+   integer follow_id
+   integer followed_id
+  }
+
+
+```
 ---
 
 ## 環境の立ち上げ方
@@ -91,3 +153,4 @@ $ sail stop
 
 // docker コンテナの削除
 $ sail down
+
