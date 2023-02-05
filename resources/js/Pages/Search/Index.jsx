@@ -1,4 +1,3 @@
-//import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import Guest from "@/Layouts/GuestLayout";
@@ -12,7 +11,7 @@ const Index = (props) => {
     const [number, setNumber] = useState(null);
     const [role, setRole] = useState(null);
     const [stance, setStance] = useState(null);
-    const { auth, roles, stances} = props;   // Stance $stance, Time $time
+    const { auth, roles, stances} = props;   // Stance $stance
 
     console.log("neko", props);
 
