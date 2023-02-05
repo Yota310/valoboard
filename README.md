@@ -71,6 +71,8 @@ ranks ||--|{ users: ""
 roles ||--|{ users: ""
 stances ||--|{ users: ""
 users ||--|{likes: ""
+users ||--|{likes: ""
+users ||--|{friends: ""
 users ||--|{friends: ""
 
   morals {
