@@ -1,11 +1,11 @@
 # VALOBOARD
 
 ## 概要
-
+Varolantというゲームのユーザー同士のマッチングアプリ
 ## 制作背景
 
-Valorant というゲームをしている時にチャットやボイスチャット暴言を吐かれた経験があり、せっかく楽しくゲームをしていたのに台無しになってしまいました。自分と同じ経験をしている人は多くいるのではないかと思い、穏やかな人のみとつながれるサービスを作ろうと思いました。
-具体的には、他のユーザーからの評価を可視化することで各ユーザーの民度を表し暴言などが嫌な方は穏やかな人のみとつながれるという仕組みです。
+以前Varolantというゲームをしていた際に、暴言を吐くプレイヤーと当たってしまい、嫌な思いをした経験がありました。こういった嫌な思いをしている人は自分以外にも沢山いるのではないかと思い、マナーの良い穏やかな人とのみ繋がれるマッチングサービスを開発しました。
+現時点では、複数条件で絞り込めるユーザー検索機能やユーザーに評価をつけて民度を可視化する機能が実装されています。
 
 #### デプロイ先
 
@@ -13,9 +13,9 @@ https://valoboard1.herokuapp.com/
 
 #### テストアカウント
 
-アカウント名　太郎#0001
-email aaa@gmail.com
-password aaiiuueeoo
+アカウント名：太郎#0001
+メールアドレス：aaa@gmail.com
+パスワード：aaiiuueeoo
 
 ---
 
@@ -36,7 +36,8 @@ password aaiiuueeoo
 
 #### フロントエンド
 
--   React　TailwindCSS
+-   React
+-   TailwindCSS
 
 #### バックエンド
 
@@ -130,22 +131,22 @@ users ||--|{friends: ""
 ## 環境の立ち上げ方
 
 このリポジトリをクローン後、下記の内容を実行
-//reviewsite2-laravel9-react-docker で下記を実行
+//valoboard で下記を実行
 
 ＄ sail up -d
 
 4. マイグレーション
-   //reviewsite2-laravel9-react-docker で下記を実行
+   //valoboard で下記を実行
    $ sail artisan migrate
    $ sail artisan db:seed
 
 5. composer、node.js のインストール
-   $composer install
-$npm install
+   $ composer install
+   $ npm install
 
 6.ローカルでアプリケーションを起動
 $ sail up -d
-$ npm run dev
+$ sail npm run dev
 // localhost にアクセスするとプレビューが確認できる
 
 #### docker の停止
