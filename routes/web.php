@@ -9,6 +9,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\MoralController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\AdminPageController;
 
 
 require __DIR__ . '/auth.php';
@@ -33,7 +34,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 Route::controller(HomeController::class)->group(function () {
     Route::get("/", "index");
     Route::get("/description", "description");
-    Route::get("/register", "register")->name('register');
+    Route::get("/register", "register")->name("register");
     Route::get("/stars/{number}/{stance}", "stars");
 });
 
@@ -62,3 +63,17 @@ Route::controller(MoralController::class)->middleware('auth')->group(function ()
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->middleware(['auth:admin', 'verified'])->name('dashboard');
+
+    require __DIR__.'/admin.php';
+});
+
+//管理者用
+Route::controller(AdminPageController::class)->middleware('auth:admin')->group(function () {
+Route::get("/admin","index");
+});

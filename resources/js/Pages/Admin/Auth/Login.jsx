@@ -34,7 +34,7 @@ export default function Login({ status, canResetPassword }) {
         <div className="font-body1">
             <GuestLayout>
                 <Head title="Log in" />
-
+                <p className="ml-3">管理者用</p>
                 {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
                 <form className="text-center mt-10 mb-5" onSubmit={submit}>
@@ -82,7 +82,7 @@ export default function Login({ status, canResetPassword }) {
                         <div className="flex items-center mt-4">
 
 
-                            <PrimaryButton href="/mypage" className="ml-4 text-xl hover:text-red-500" processing={processing}>
+                            <PrimaryButton href="/admin" className="ml-4 text-xl hover:text-red-500" processing={processing}>
                                 ログイン
                     </PrimaryButton>
 

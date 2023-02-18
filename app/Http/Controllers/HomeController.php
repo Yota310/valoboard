@@ -30,7 +30,7 @@ class HomeController extends Controller
     
     public function register()
     {
-        return Inertia::render("Auth/register");
+        return Inertia::render("Auth/Register");
     }
 
     public function description()
