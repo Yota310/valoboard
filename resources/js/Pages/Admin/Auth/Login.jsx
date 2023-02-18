@@ -98,7 +98,7 @@ export default function Login({ status, canResetPassword }) {
 
                             <Link
                                 href={route('admin.password.request')}
-                                className="underline text-sm text-gray-600 hover:text-red-50"
+                                className="underline text-sm hover:text-red-500 text-gray-600"
                             >
                                 パスワードをお忘れですか？？
                             </Link>
@@ -109,7 +109,7 @@ export default function Login({ status, canResetPassword }) {
                     </div>
                     <Link
                         href={route('admin.register')}
-                        className="underline text-sm text-gray-600 hover:text-red-500"
+                        className="underline text-sm hover:text-red-500 text-gray-600"
                     >
                         新規登録はこちら！
                             </Link>

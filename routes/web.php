@@ -11,6 +11,11 @@ use App\Http\Controllers\MoralController;
 use App\Http\Controllers\ChatController;
 
 
+require __DIR__ . '/auth.php';
+Route::prefix('admin')->name('admin.')->group(function(){
+    require __DIR__.'/admin.php';
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +33,7 @@ use App\Http\Controllers\ChatController;
 Route::controller(HomeController::class)->group(function () {
     Route::get("/", "index");
     Route::get("/description", "description");
-    Route::get("/register", "register");
+    Route::get("/register", "register")->name('register');
     Route::get("/stars/{number}/{stance}", "stars");
 });
 
@@ -57,11 +62,3 @@ Route::controller(MoralController::class)->middleware('auth')->group(function ()
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
-
-require __DIR__ . '/auth.php';
-Route::prefix('admin')->name('admin.')->group(function(){
-    require __DIR__.'/admin.php';
-});

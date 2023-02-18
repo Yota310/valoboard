@@ -98,7 +98,7 @@ export default function Login({ status, canResetPassword }) {
 
                             <Link
                                 href={route('password.request')}
-                                className="underline text-sm text-gray-600 hover:text-red-50"
+                                className="underline text-sm text-gray-600 hover:text-red-500"
                             >
                                 パスワードをお忘れですか？？
                             </Link>
