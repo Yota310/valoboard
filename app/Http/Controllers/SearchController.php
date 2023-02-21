@@ -4,22 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SearchRequest;
 use Inertia\Inertia;
-use App\Models\User;
-use App\Models\Rank;
-use App\Models\Role;
-use App\Models\Stance;
-use App\Models\Time;
-
+use App\Models\{User,Rank,Role,Stance,Time};
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
 
-    public function Index(Rank $rank, Role $role, Stance $stance, Time $time)
+    public function index(Rank $rank, Role $role, Stance $stance, Time $time)
     {
         return Inertia::render("Search/Index", ["ranks" => $rank->get(), "roles" => $role->get(), "stances" => $stance->get(), "times" => $time->get()]);
     }
 
-    public function Show(SearchRequest $request, User $user, Rank $rank)
+    public function show(SearchRequest $request, User $user, Rank $rank)
     {
         
         $word = $request->input('word');
@@ -29,14 +25,14 @@ class SearchController extends Controller
         $stance = $request->input('stance');
         $time = $request->input('time');
         
-        //名前、ランク名、ランク番号、ロール、プレイスタイル○
+        //名前、ランク名、ランク番号、ロール、プレイスタイル
         if (isset($word) && isset($rank_name) && isset($role) && isset($stance) && isset($number)) {
             $rank_id = $rank->where('name', 'like', $rank_name)->where('number', 'like', $number)->first();
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->where('rank_id', $rank_id->id)->where('role_id', $role)->where('stance_id', $stance)->get();
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 
-        //名前、ランク名、ロール、プレイスタイル○
+        //名前、ランク名、ロール、プレイスタイル
         if (isset($word) && isset($rank_name) && isset($role) && isset($stance)) {
             $rank_id = $rank->where('name', $rank_name)->get();
             //ここで番号の有無をはんだん
@@ -45,21 +41,21 @@ class SearchController extends Controller
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 
-        //ランク名、ランク番号、ロール、プレイスタイル○
+        //ランク名、ランク番号、ロール、プレイスタイル
         if (isset($rank_name) && isset($role) && isset($stance) && isset($number)) {
             $rank_id = $rank->where('name', 'like', $rank_name)->where('number', 'like', $number)->first();
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->where('rank_id', $rank_id->id)->where('role_id', $role)->where('stance_id', $stance)->get();
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 
-        //名前、ランク名、ロール、プレイスタイル○
+        //名前、ランク名、ロール、プレイスタイル
         if (isset($word) && isset($rank_name) && isset($role) && isset($stance)) {
             $ne = $rank->where('name', $rank_name)->get();
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->where('rank_id', '>=', $ne[0]->id)->where('rank_id', '<=', $ne[2]->id)->where('role_id', $role)->where('stance_id', $stance)->get();
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 
-        //ランク名、ロール、プレイスタイル○猫はうごく
+        //ランク名、ロール、プレイスタイル
         if (isset($rank_name) && isset($role) && isset($stance)) {
             $ne = $rank->where('name', $rank_name)->get();
             //ここで番号の有無をはんだん
@@ -68,10 +64,16 @@ class SearchController extends Controller
             //$rank_idのデータが一つだけの時
             return Inertia::render("Search/Show", ["users" => $neko]);
         }
-        //名前○
+    }
+
+    public function keyword(Request $request, User $user, Rank $rank)
+    {
+        $word = $request->input('word');    
+        //名前で検索
         if (isset($word)) {
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->get();
             return Inertia::render("Search/Show", ["users" => $users]);
         }
     }
+
 }

@@ -53,6 +53,7 @@ Route::controller(MypageController::class)->group(function () {
 Route::controller(SearchController::class)->group(function () {
     Route::get("/search", "index");
     Route::get("/result", "show");
+    Route::get("/keyword", "keyword");
 });
 
 //モラル
