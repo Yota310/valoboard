@@ -16,11 +16,16 @@ const Show = (props) => {
         <div className="font-body1">
             {auth.user != null ? (
                 <Authenticated auth={auth}>
-                    <Profile
-                        title={"検索結果"}
-                        users={users}
-                        auth={auth}
-                    />
+                    {users[0] != null ? (
+                        <Profile
+                            title={"検索結果"}
+                            users={users}
+                            auth={auth}
+                        />
+                    ) : (
+                        <div>条件のプレーヤーが見つかりませんでした。</div>
+                    )
+                    }
                 </Authenticated>
             ) : (
                 <Guest>

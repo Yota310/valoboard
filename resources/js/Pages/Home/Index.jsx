@@ -11,9 +11,8 @@ import { Inertia } from "@inertiajs/inertia";
 
 const Index = (props) => {
 
-    const { users, auth } = props;
+    const { users, auth, likes } = props;
     const [word, setWord] = useState("");
-
     const handleSearch = (e) => {
         e.preventDefault();
         Inertia.get(`/keyword`, { word: word });
@@ -25,18 +24,25 @@ const Index = (props) => {
 
 
                 <Authenticated auth={auth}>
-                    <form onSubmit={handleSearch}>
-                        <h1 className="text-xl text-white bg-black pl-5 py-1 font-black m-3">キーワード検索</h1>
-                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-4 font-black text-xl rounded-l-xl w-1/3 ml-3 hover:shadow-gray-500 shadow-lg hover:border-red-500" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
+                    <div className="mb-8">
+                        <form onSubmit={handleSearch}>
+                            <h1 className="text-xl text-white bg-black pl-5 py-1 font-black m-3">キーワード検索</h1>
+                            <input type="text" className="p-3 bg-white border-4 border-black text-center pt-4 font-black text-xl rounded-l-xl w-1/3 ml-3 hover:shadow-gray-500 shadow-lg hover:border-red-500" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
 
 
-                        <button type="submit" className="bg-black p-4 pt-5 rounded-r-xl text-white text-xl hover:text-red-500 font-black hover:shadow-gray-500 shadow-lg">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className="mb-1" />
-                        </button>
+                            <button type="submit" className="bg-black p-4 pt-5 rounded-r-xl text-white text-xl hover:text-red-500 font-black hover:shadow-gray-500 shadow-lg">
+                                <FontAwesomeIcon icon={faMagnifyingGlass} className="mb-1" />
+                            </button>
 
-                    </form>
+                        </form>
+                    </div>
+                    <Profile //ブックマークしたプレーヤーの表示
+                        title="ブックマークしたプレーヤー"
+                        users={likes}
+                        auth={auth}
+                    />
 
-                    <Profile
+                    <Profile //新着の人の表示
                         title="新着の評価"
                         users={users}
                         auth={auth}

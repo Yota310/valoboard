@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SearchRequest;
 use Inertia\Inertia;
-use App\Models\{User,Rank,Role,Stance,Time};
+use App\Models\{User, Rank, Role, Stance, Time};
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -17,19 +17,18 @@ class SearchController extends Controller
 
     public function show(SearchRequest $request, User $user, Rank $rank)
     {
-        
+
         $word = $request->input('word');
         $rank_name = $request->input('rank');
         $number = $request->input('number');
         $role = $request->input('role');
         $stance = $request->input('stance');
         $time = $request->input('time');
-        
+
         //名前、ランク名、ランク番号、ロール、プレイスタイル
         if (isset($word) && isset($rank_name) && isset($role) && isset($stance) && isset($number)) {
             $rank_id = $rank->where('name', 'like', $rank_name)->where('number', 'like', $number)->first();
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->where('rank_id', $rank_id->id)->where('role_id', $role)->where('stance_id', $stance)->get();
-            $count=count($users);  //検索結果判定
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 
@@ -69,12 +68,14 @@ class SearchController extends Controller
 
     public function keyword(Request $request, User $user, Rank $rank)
     {
-        $word = $request->input('word');    
+        $word = $request->input('word');
         //名前で検索
         if (isset($word)) {
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->get();
+            if ($user == null) {
+                return Inertia::render("Search/Nothing");
+            }
             return Inertia::render("Search/Show", ["users" => $users]);
         }
     }
-
 }

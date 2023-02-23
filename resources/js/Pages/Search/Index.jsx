@@ -29,7 +29,7 @@ const Index = (props) => {
                     <div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
                     <form onSubmit={handleSearch}>
 
-                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-16" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
+                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-3" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
 
                         <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-6 w-1/7" onChange={(e) => setRank(e.target.value)}>
                             <option default>ランク選択</option>
@@ -65,7 +65,7 @@ const Index = (props) => {
                         </select>
 
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setStance(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/8" onChange={(e) => setStance(e.target.value)}>
                             <option default>プレイスタイルを選択</option>
                             {stances.map((stance) => (
 
@@ -91,9 +91,9 @@ const Index = (props) => {
 <div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
                     <form onSubmit={handleSearch}>
 
-                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-16" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
+                        <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-3" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-6 w-1/7" onChange={(e) => setRank(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 pl-3 pr-4 w-1/7" onChange={(e) => setRank(e.target.value)}>
                             <option default>ランク選択</option>
                             <option value="アイアン">アイアン</option>
                             <option value="ブロンズ">ブロンズ</option>
@@ -107,7 +107,7 @@ const Index = (props) => {
 
                         </select>
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black pt-5 text-left font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setNumber(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black pt-5 text-left font-black text-xl pb-3 pl-3 pr-8 w-1/7" onChange={(e) => setNumber(e.target.value)}>
                             <option default>ランク番号</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -115,7 +115,7 @@ const Index = (props) => {
 
                         </select>
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-5 w-1/7" onChange={(e) => setRole(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 pl-2 pr-4 w-1/7" onChange={(e) => setRole(e.target.value)}>
                             <option default>ロールを選択</option>
                             {roles.map((role) => (
 
@@ -127,7 +127,7 @@ const Index = (props) => {
                         </select>
 
 
-                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 px-8 w-1/7" onChange={(e) => setStance(e.target.value)}>
+                        <select className="bg-white text-gray-600 border-4 border-r-0 border-black  text-left pt-5 font-black text-xl pb-3 pl-3 pr-8 w-1/7" onChange={(e) => setStance(e.target.value)}>
                             <option default>プレイスタイルを選択</option>
                             {stances.map((stance) => (
 

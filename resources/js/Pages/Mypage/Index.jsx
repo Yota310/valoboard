@@ -7,8 +7,8 @@ import Rating from '@mui/material/Rating';
 import PrimaryButton from '@/Components/PrimaryButton';
 import Star from '@/Components/Mypage/Star';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faHeart as borderHeart } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark, faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as borderBookmark } from "@fortawesome/free-regular-svg-icons";
 
 
 const Index = (props) => {
@@ -164,16 +164,18 @@ const Index = (props) => {
                                             <p>関連SNS</p>
                                             <p><a className="w-1/2 text-black hover:text-red-500" target="_blank" href={mypage_user.sns_url}>{mypage_user.sns_name}</a></p>
                                         </div>
-                                        {isLiked ? (
-                                            <button onClick={handleUnlike}><FontAwesomeIcon icon={faHeart} className="text-red-500" /></button>
-                                        ) : (
-                                            <button onClick={handleLike}><FontAwesomeIcon icon={borderHeart} /></button>
-                                        )}
+                                        <div className="text-center mt-6">
+                                            {isLiked ? (
+                                                <button onClick={handleUnlike}><FontAwesomeIcon icon={faBookmark} className="text-red-500" /></button>
+                                            ) : (
+                                                <button onClick={handleLike}><FontAwesomeIcon icon={borderBookmark} /></button>
+                                            )}
+                                        </div>
 
                                     </div>
 
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
-                                        <div className="flex w-">
+                                        <div className="flex">
                                             {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
 
 
