@@ -14,19 +14,19 @@ const Show = (props) => {
 
     return (
         <div className="font-body1">
-            { auth.user != null ? (
+            {auth.user != null ? (
                 <Authenticated auth={auth}>
                     <Profile
-                    title={"検索結果"}
-                    users={users}
-                    auth={auth}
+                        title={"検索結果"}
+                        users={users}
+                        auth={auth}
                     />
                 </Authenticated>
             ) : (
                 <Guest>
                     <Profile
-                    title={"検索結果"}
-                    users={users}
+                        title={"検索結果"}
+                        users={users}
                     />
                 </Guest>
             )

@@ -18,7 +18,7 @@ h3 {
 }
 
 a {
-    @apply text-blue-600 underline;
+    @apply text-red-500 underline;
 }
 
 #overlay {

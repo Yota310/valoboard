@@ -83,4 +83,31 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
+    public function likeUsers() //中間テーブル
+    {
+        return $this->belongsToMany(User::class, 'likes', 'like_id', 'liked_id');
+    }
+
+    public function LikeStatus($userId)  //いいね機能の状態の判別()boolean,($userId)=いいねを押されたユーザーのID
+    {
+        return User::whereHas('likeUsers', function ($query) use ($userId) {
+            $query->where('liked_id', $userId);
+        })->exists();  //ここでは中間テーブルの中身を検索している
+    }
+
+    public function like($userId)
+    {
+        if ($this->LikeStatus($userId)) {
+            //すでにいいねだったら何もしない
+        } else {
+            $this->likeUsers()->attach($userId);
+        }
+    }
+
+    public function unlike($userId)
+    {
+        if ($this->LikeStatus($userId)) {
+            $this->likeUsers()->detach($userId); //すでにいいねだったら消す
+        }
+    }
 }

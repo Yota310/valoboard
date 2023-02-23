@@ -6,14 +6,28 @@ import { Link, useForm } from '@inertiajs/inertia-react';
 import Rating from '@mui/material/Rating';
 import PrimaryButton from '@/Components/PrimaryButton';
 import Star from '@/Components/Mypage/Star';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as borderHeart } from "@fortawesome/free-regular-svg-icons";
 
 
 const Index = (props) => {
-    const { mypage_user, auth, moral } = props;
+    const { mypage_user, auth, isLiked, moral } = props;
     const { data, setData, post } = useForm({
         modalState: false
     })
+    const handleLike = (e) => {
+        e.preventDefault();
+        console.log("like");
+        post(`/like/${mypage_user.id}`)
+    }
+
+    const handleUnlike = (e) => {
+        e.preventDefault();
+        console.log("unlike");
+        post(`/unlike/${mypage_user.id}`)
+    }
+
     let modal;
     const handleModalState = () => {
         setData("modalState", true);
@@ -85,7 +99,7 @@ const Index = (props) => {
                                             </div>
 
                                             <div className="text-gray-600 pt-1 w-2/3">
-                                                <p className="border-black text-left font-black text-5xl rounded-l-xl">　</p>
+                                                <p className="border-black text-left font-black text-5xl rounded-l-xl"> </p>
                                                 <p className="text-left font-medium text-3xl mt-5">{mypage_user.rank.name}</p>
                                                 <p className="text-left font-medium text-3xl mt-5">{mypage_user.role.name}</p>
                                                 <p className="text-left font-medium text-3xl mt-5">{mypage_user.stance.name}</p>
@@ -150,6 +164,12 @@ const Index = (props) => {
                                             <p>関連SNS</p>
                                             <p><a className="w-1/2 text-black hover:text-red-500" target="_blank" href={mypage_user.sns_url}>{mypage_user.sns_name}</a></p>
                                         </div>
+                                        {isLiked ? (
+                                            <button onClick={handleUnlike}><FontAwesomeIcon icon={faHeart} className="text-red-500" /></button>
+                                        ) : (
+                                            <button onClick={handleLike}><FontAwesomeIcon icon={borderHeart} /></button>
+                                        )}
+
                                     </div>
 
                                     <div className=" rounded-xl border-black border-2 mr-5 ml-5 bg-white pr-1 pb-5  w-3/4">
@@ -169,7 +189,7 @@ const Index = (props) => {
                                             </div>
 
                                             <div className="text-gray-600 pt-1 w-2/3">
-                                                <p className="border-black text-left font-black text-5xl rounded-l-xl">　</p>
+                                                <p className="border-black text-left font-black text-5xl rounded-l-xl"></p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.rank.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.role.name}</p>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.stance.name}</p>

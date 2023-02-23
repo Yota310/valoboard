@@ -11,7 +11,7 @@ const Keyword = (props) => {
     const [number, setNumber] = useState(null);
     const [role, setRole] = useState(null);
     const [stance, setStance] = useState(null);
-    const { auth, roles, stances} = props;   // Stance $stance
+    const { auth, roles, stances } = props;   // Stance $stance
 
     console.log("neko", props);
 
@@ -24,7 +24,7 @@ const Keyword = (props) => {
 
     return (
         <div className="font-body1">
-            { auth.user != null ? (
+            {auth.user != null ? (
                 <Authenticated auth={auth}>
                     <div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
                     <form onSubmit={handleSearch}>
@@ -35,7 +35,7 @@ const Keyword = (props) => {
             ) : (
                 <Guest>
 
-<div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
+                    <div className="m-3 text-xl bg-black text-white pl-5 py-1 font-black">ユーザー検索</div>
                     <form onSubmit={handleSearch}>
 
                         <input type="text" className="p-3 bg-white border-4 border-black text-center pt-5 font-black text-xl rounded-l-xl w-1/5 ml-16" onChange={(e) => setWord(e.target.value)} placeholder="探したい人の名前" />

@@ -29,6 +29,7 @@ class SearchController extends Controller
         if (isset($word) && isset($rank_name) && isset($role) && isset($stance) && isset($number)) {
             $rank_id = $rank->where('name', 'like', $rank_name)->where('number', 'like', $number)->first();
             $users = User::with(['rank', 'role', 'stance', 'time'])->where('name', 'LIKE', '%' . $word . '%')->where('rank_id', $rank_id->id)->where('role_id', $role)->where('stance_id', $stance)->get();
+            $count=count($users);  //検索結果判定
             return Inertia::render("Search/Show", ["users" => $users]);
         }
 

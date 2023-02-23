@@ -19,6 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(StanceSeeder::class);
         $this->call(TimeSeeder::class);
         $this->call(UserSeeder::class);
-
+        $this->call(LikeSeeder::class);
     }
 }
