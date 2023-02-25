@@ -13,7 +13,7 @@ class MypageController extends Controller
     public function index(User $user, Moral $moral)
     {
         $mypage_user = User::with(['rank', 'role', 'stance', 'time'])->find($user->id);
-        $boolean = $user->LikeStatus($user->id);
+        $boolean = $user->LikeStatus($user->id); //現在のページのユーザーをいいねしているか判別
         $moral->calculate($user);
         return Inertia::render("Mypage/Index", ["mypage_user" => $mypage_user, 'isLiked' => $boolean]);
     }
