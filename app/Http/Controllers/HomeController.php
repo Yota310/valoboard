@@ -15,7 +15,6 @@ class HomeController extends Controller
         $auth = auth()->user();
         if ($auth != null) {
             $like =  $auth->likeUsers()->with(['rank', 'role', 'stance', 'time'])->get();
-            // dd($like);
             $users = User::with(['rank', 'role', 'stance', 'time'])->get();
             return Inertia::render("Home/Index", ["users" => $users, "likes" => $like]);
         } else {
