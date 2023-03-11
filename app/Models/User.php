@@ -90,7 +90,7 @@ class User extends Authenticatable
 
     public function LikeStatus($userId)  //いいね機能の状態の判別(boolean),($userId)=いいねを押されたユーザーのID
     {
-        return User::whereHas('likeUsers', function ($query) use  ($userId) {   //likeUsers　←リレーションメソッド名
+        return User::whereHas('likeUsers', function ($query) use ($userId) {   //likeUsers　←リレーションメソッド名
             $query->where('liked_id', $userId);
         })->exists();  //ここでは中間テーブルの中身を検索している
     }
