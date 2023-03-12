@@ -175,7 +175,7 @@ const Index = (props) => {
                                                     <Rating size="large" name="read-only" value={mypage_user.moral} readOnly />
                                                     <button type="submit" className="bg-black p-3 rounded-xl mr-40 no-underline text-white text-xl hover:text-red-500 font-black ml-5" onClick={handleModalState}>民度を評価</button>
                                                 </p>
-                                                <span className="text-red-600">{props.errors.star}</span>
+                                                <span className="text-red-600 bg-red-200">{props.errors.star}</span>
                                                 <p className="text-left font-medium text-4xl mt-5">{mypage_user.profile}</p>
                                             </div>
                                         </div>

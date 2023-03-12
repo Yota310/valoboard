@@ -79,11 +79,13 @@ const Index = (props) => {
                         <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
-                    <span className="text-red-600">{props.errors.rank}</span>
+                    <div className="ml-3 mr-3 w-1/3">
+                    <span className="text-red-600 bg-red-200">{props.errors.rank}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.role}</span>
+                    <span className="text-red-600 bg-red-200">{props.errors.role}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.stance}</span>
+                    <span className="text-red-600 bg-red-200">{props.errors.stance}</span>
+                    </div>
                 </Authenticated>
             ) : (
                 <Guest>
@@ -143,11 +145,11 @@ const Index = (props) => {
                         <button type="submit" className="bg-black p-4 pt-6 rounded-r-xl text-white text-xl hover:text-red-500 font-black">検索</button>
 
                     </form>
-                    <span className="text-red-600">{props.errors.rank}</span>
+                    <span className="text-red-600 bg-red-200">{props.errors.rank}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.role}</span>
+                    <span className="text-red-600 bg-red-200">{props.errors.role}</span>
                     <br />
-                    <span className="text-red-600">{props.errors.stance}</span>
+                    <span className="text-red-600 bg-red-200">{props.errors.stance}</span>
                 </Guest>
             )
             }
