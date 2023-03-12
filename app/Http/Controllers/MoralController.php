@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\MoralRequest;
 use App\Models\Moral;
 use App\Models\User;
 
 
 class MoralController extends Controller
 {
-    public function store(Request $request,Moral $moral, User $user){
+    public function store(MoralRequest $request,Moral $moral, User $user){
         $user_id = $request->get("user_id"); //リクエストのuser_id(評価をつけた人)の受け取り
         $status = $moral->where('user_id',$user_id)->exists(); //すでに評価されているかチェック
         if($status){ //すでに評価されていたら更新
