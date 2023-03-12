@@ -61,8 +61,8 @@ https://valoboard1.herokuapp.com/
 |   morals   |                  ユーザーの他のユーザーからの評価の情報                   |
 |   likes    |　　　　　　　　　　　ユーザーに対するお気に入りの情報　　　　　　　　　         |
 |   firends  |　　　　　　　　　　　ユーザー友達になっているユーザーの情報　　　　　　　　　    |
-<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/109267974/216833890-6aa24968-0238-4ef0-b5b3-176c5316dfb5.png">
 
+<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/109267974/224547128-5da66adc-fd9e-4969-b593-be118d97a00e.png">
 
 - VALOBOARD
 ```mermaid
@@ -77,6 +77,7 @@ users ||--|{friends: ""
 users ||--|{friends: ""
 
   morals {
+    integer id
     integer star
     integer user_id
     integer evaluated_user_id
